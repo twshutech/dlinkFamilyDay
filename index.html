@@ -38,27 +38,36 @@
 
 
 </head>
-<body >
-  
-  <div class="main_content" id="home" style="position:relative;"  ng-app="myApp">
-    <div ng-include="'https://twshutech.github.io/dlinkFamilyDay/header.html'">
-
+<body ng-app="myApp">
+  <div class="main_content" id="home" style="position:relative;" ng-controller="headerController">
+    <div class="header" style="background-color:black;  height:50px; " id="menu" >
+        <div  class="logo">
+          <span class="wrap_logo">
+            <img src="img/dlink.png" alt="dlink" class="img_logo" >
+          </span>
+        </div>
+        <div class="menuWrap">
+          <a ng-if="desktopView" class="menuItem" href="" target="_blank">
+                  <span>活動流程</span>
+          </a>
+          <a ng-if="desktopView" class="menuItem" href="">
+                  <span>地圖</span>
+          </a>
+          <a ng-if="desktopView" class="menuItem" href="">
+                  <span>注意事項</span>
+          </a>
+          <i ng-if="!desktopView" class="fa fa-align-justify" style="font-size:20px;color:white"></i>
+        </div>
     </div>
     <div class="menu">
       <!-- <div class="barholder">
           <div class="Progressbar"><p></p></div>
         </div> -->
-       
     </div>
     <div ng-view></div>
     <footer ng-include="'https://twshutech.github.io/dlinkFamilyDay/footer.html'" id="footer">
-      
     </footer>
- </div>
- 
-   
-      
-
+  </div>
 </body>
 <script>  
 $(document).ready(function(){
