@@ -227,7 +227,6 @@ display: block;
 margin: auto;
 }
 .logo{
-  display: inline-block;
   position: relative;
   margin: auto;
   text-align: center;
@@ -466,6 +465,6 @@ margin: auto;
   #icon_Menu{
     float: right;
     line-height: 50px;
-    display: inline-block;
+    display: block;
   }
 }
