@@ -234,6 +234,10 @@ margin: auto;
   width: 55%;
   padding: 0 10px;
 }
+.img_logo{
+  width: 190px;
+  height: 34px;
+}
 .menuWrap{
   display: inline-block;
   position: relative;
