@@ -2,16 +2,16 @@ var app = angular.module("myApp", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "https://twshutech.github.io/demo.github.io/frontpage.html"
+        templateUrl : "https://twshutech.github.io/dlinkFamilyDay/frontpage.html"
     })
     .when("/skills", {
-        templateUrl : "https://twshutech.github.io/demo.github.io/skills"
+        templateUrl : "https://twshutech.github.io/dlinkFamilyDay/skills"
     })
     .when("/portfolio", {
-        templateUrl : "https://twshutech.github.io/demo.github.io/portfolio.html"
+        templateUrl : "https://twshutech.github.io/dlinkFamilyDay/portfolio.html"
     })
     .when("/contact", {
-        templateUrl : "https://twshutech.github.io/demo.github.io/contact.html"
+        templateUrl : "https://twshutech.github.io/dlinkFamilyDay/contact.html"
     });
 });
 
