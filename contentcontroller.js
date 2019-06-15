@@ -15,22 +15,25 @@ app.config(function($routeProvider) {
     });
 });
 
-angular.module("myApp").controller('headerController',function($scope, $window){
-    $scope.desktopView = true;
-
-    if(window.screen.availWidth < 700){
-        $scope.desktopView = false;
-    }
-
-    angular.element($window).bind('resize', function(){
-        if(window.screen.availWidth < 700){
-            $scope.desktopView = false;
-            console.log ('mobile view'+$scope.desktopView);
-        }
-        else{
+app.directive('resize',function($scope, $window){
+    return {
+        link: function($scope){
             $scope.desktopView = true;
-            console.log ('desktop view'+$scope.desktopView);
-        }
-    });
 
+            if(window.screen.availWidth < 700){
+                $scope.desktopView = false;
+            }
+
+            angular.element($window).bind('resize', function(){
+                if(window.screen.availWidth < 700){
+                    $scope.desktopView = false;
+                    console.log ('mobile view'+$scope.desktopView);
+                }
+                else{
+                    $scope.desktopView = true;
+                    console.log ('desktop view'+$scope.desktopView);
+                }
+            });
+        }
+    }
 });
