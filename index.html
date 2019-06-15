@@ -1,0 +1,146 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="google-site-verification" content="tALAq3_wj8X2QGSaaBj0lZdZIzEVOahqUFVh8AasSf0" />
+  <meta name="Description" content="Shutech is a freelancer frontend developer , I do UI/UX design , SEO , API , javascript frameworks etc ">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="view-source:http://janlosert.com/assets/styles/css/main.css?11"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="contentcontroller.js"></script>
+  <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="Img/icon_shutech.jpg">
+  <link rel="manifest" src="manifest.webmanifest">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link rel="stylesheet" href="maincss.css">
+  <script>
+    var callbackFunction = function(data) {
+      var wind = data.query.results.channel.wind;
+      alert(wind.chill);
+    };
+  </script>
+  
+  <script src="https://query.yahooapis.com/v1/public/yql?q=select from weather.forecast where woeid in (select woeid from geo.places(1) where text='chicago, il')&format=json&callback=callbackFunction"></script>
+
+
+     <title>Hey, I'm Shuwei</title>
+
+
+</head>
+<body >
+
+  <div class="main_content" id="home" style="position:relative;"  ng-app="myApp" >
+    <div class="menu">
+      <!-- <div class="barholder">
+          <div class="Progressbar"><p></p></div>
+        </div> -->
+       
+    </div>
+    <div ng-view></div>
+    <footer ng-include="'https://twshutech.github.io/demo.github.io/footer.html'" id="footer">
+      
+    </footer>
+ </div>
+ 
+   
+      
+
+</body>
+<script>  
+$(document).ready(function(){
+var currentUrl = window.location.href;
+    var currentPath = currentUrl.substr(currentUrl.lastIndexOf('/') + 1);
+    if(currentPath=="skills"){
+      $('#footer').css('position','relative');
+    }
+})
+    </script>
+<script>
+  $(document).ready(function(){
+  
+    $('#gohire').click(function(){
+   $.ajax({
+     type:'post',
+     url:"https://twshutech.github.io/demo.github.io/client.php",
+     success:function(data){
+       console.log('it went well'+data);
+     },error:function(data){
+       console.log(data);
+     }
+   });
+   })
+    // $('html').load('https://twshutech.github.io/demo.github.io/client.php');
+
+    
+    $('#skillbtn').click(function(){
+      var body = document.body;
+      $('.Progressbar').css('width','70%');
+     $('#skillnew').hide();
+     $('#portfolionew').show();
+     $('#skillbtn').css('display','none');
+     $('#contactpage').css('display','block');
+     body.scrollTop = 10;
+    });
+    $('#portbtn').click(function(){
+    //  $('#skillnew').show();
+    //  $('#portfolionew').hide();
+    //  $('#portbtn').css('display','none');
+    //  $('#skillbtn').css('display','block');
+      location.reload()
+    });
+    $('#contactpage').click(function(){
+      var body = document.body;
+      $('#contactpage').hide();
+      $('.Progressbar').css('width','100%');
+      $('#portfolionew').hide();
+      $('#portbtn').css('display','block');
+      $('#hire').show();
+      $('#footer').css('position','fixed');
+      body.scrollTop = 0;
+    });
+    $('.shutech').click(function(){
+      $('.Progressbar').css('width','50%');
+
+      $(this).remove();
+      $('.Progressbar p').innerHTML=$('.Progressbar').width();
+      $('#frontpage').remove();
+      $('#skillnew,#skillbtn').css('display','block');
+      if($(window).width()<=700){
+        $('#footer').css('position','relative');
+      }
+      // $('#skillbtn').css('display','block');
+    });
+  var getwidth = $('.Progressbar').width();
+  var getparentwidth= $('.barholder').width();
+  var getpersentage = (getwidth/getparentwidth)*100;
+    
+  });
+
+  </script>
+
+  <script>
+var i = 0;
+var txt = 'Hello I am Shuwei a frontend developer I self-taught for web development , because that where my passion is do you want to know more about me ?hit the picture and get into it ';
+var speed = 50;
+$('#check').click(function(){
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+})
+
+    </script>
+
+</html>

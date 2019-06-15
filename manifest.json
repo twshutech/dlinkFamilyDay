@@ -1,0 +1,16 @@
+{
+  "short_name": "shutech",
+  "name": "shuwei portfolio",
+  "icons": [
+    {
+      "src": "/Img/shutech.png",
+      "type": "image/png",
+      "sizes": "398x398"
+    },
+  ],
+  "start_url": "https://twshutech.github.io/demo.github.io/",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "https://twshutech.github.io/",
+  "theme_color": "#3367D6"
+}
