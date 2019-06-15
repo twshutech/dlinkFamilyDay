@@ -15,15 +15,17 @@ app.config(function($routeProvider) {
     });
 });
 
+app.controller('familydayController',function($scope){
+    $scope.desktopView = true;
+
+    if(window.screen.availWidth < 700){
+        $scope.desktopView = false;
+    }
+});
+
 app.directive('resize',['$window',function($window){
     return {
         link: function($scope){
-            $scope.desktopView = true;
-
-            if(window.screen.availWidth < 700){
-                $scope.desktopView = false;
-            }
-
             angular.element($window).bind('resize', function(){
                 if(window.screen.availWidth < 700){
                     $scope.desktopView = false;
@@ -33,6 +35,7 @@ app.directive('resize',['$window',function($window){
                     $scope.desktopView = true;
                     console.log ('desktop view'+$scope.desktopView);
                 }
+                $scope.$apply();
             });
         }
     }
