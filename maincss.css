@@ -93,7 +93,14 @@ border-radius: 10px;
   position: absolute;
   bottom: -125px;
 }
-
+.header{
+  background-color:#fff;
+  height:50px; 
+}
+.header>span{
+  color:#000;
+  
+}
 /* .menubtn:active{
   animation-name: colourshape;
   animation-duration: 0.4s;
@@ -465,6 +472,6 @@ margin: auto;
   #icon_Menu{
     float: right;
     line-height: 50px;
-    display: block;
+    display: block; 
   }
 }
