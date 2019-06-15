@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
     });
 });
 
-app.directive('resize',function($scope, $window){
+app.directive('resize',['$window',function($window){
     return {
         link: function($scope){
             $scope.desktopView = true;
@@ -36,4 +36,4 @@ app.directive('resize',function($scope, $window){
             });
         }
     }
-});
+}]);
