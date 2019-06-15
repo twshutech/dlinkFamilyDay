@@ -263,6 +263,11 @@ margin: auto;
   line-height: 50px;
   height: 100%; 
 }
+#icon_Menu{
+  float: right;
+  line-height: 50px;
+  display: none;
+}
 .footerlink{
   display: inline-block;
   position: relative;
@@ -448,5 +453,18 @@ margin: auto;
   .barholder{
     height: 10px;
   }
-
+  .menuItem{
+    display: none;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 30%;
+    padding: 0 10px;
+    line-height: 50px;
+    height: 100%; 
+  }
+  #icon_Menu{
+    float: right;
+    line-height: 50px;
+  }
 }
