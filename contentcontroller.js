@@ -22,7 +22,7 @@ angular.module("myApp").controller('headerController',function($scope){
         $scope.desktopView = false;
     }
 
-    $(window).resize(function(){
+    angular.element($window).bind('resize', function(){
         if(window.screen.availWidth < 700){
             $scope.desktopView = false;
             console.log ('mobile view'+$scope.desktopView);
