@@ -25,11 +25,11 @@ angular.module("myApp").controller('headerController',function($scope){
     $(window).resize(function(){
         if(window.screen.availWidth < 700){
             $scope.desktopView = false;
-            console.log ('mobile view');
+            console.log ('mobile view'+$scope.desktopView);
         }
         else{
-            console.log ('desktop view');
             $scope.desktopView = true;
+            console.log ('desktop view'+$scope.desktopView);
         }
     });
 
