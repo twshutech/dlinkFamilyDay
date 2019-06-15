@@ -260,6 +260,8 @@ margin: auto;
   text-align: center;
   width: 30%;
   padding: 0 10px;
+  line-height: 50px;
+  height: 100%; 
 }
 .footerlink{
   display: inline-block;
