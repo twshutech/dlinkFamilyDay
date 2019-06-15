@@ -34,12 +34,14 @@
   <script src="https://query.yahooapis.com/v1/public/yql?q=select from weather.forecast where woeid in (select woeid from geo.places(1) where text='chicago, il')&format=json&callback=callbackFunction"></script>
 
 
-     <title>Hey, I'm Shuwei</title>
+     <title>D-Link Family day</title>
 
 
 </head>
 <body >
-
+  <div ng-include="'https://twshutech.github.io/dlinkFamilyDay/header.html'">
+  
+  </div>
   <div class="main_content" id="home" style="position:relative;"  ng-app="myApp" >
     <div class="menu">
       <!-- <div class="barholder">
@@ -48,7 +50,7 @@
        
     </div>
     <div ng-view></div>
-    <footer ng-include="'https://twshutech.github.io/demo.github.io/footer.html'" id="footer">
+    <footer ng-include="'https://twshutech.github.io/dlinkFamilyDay/footer.html'" id="footer">
       
     </footer>
  </div>
@@ -72,7 +74,7 @@ var currentUrl = window.location.href;
     $('#gohire').click(function(){
    $.ajax({
      type:'post',
-     url:"https://twshutech.github.io/demo.github.io/client.php",
+     url:"https://twshutech.github.io/dlinkFamilyDay/client.php",
      success:function(data){
        console.log('it went well'+data);
      },error:function(data){

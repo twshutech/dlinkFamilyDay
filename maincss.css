@@ -226,7 +226,30 @@ width: 100px;
 display: block;
 margin: auto;
 }
-
+.logo{
+  display: inline-block;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  width: 60%;
+  padding: 0 10px;
+}
+.menuWrap{
+  display: inline-block;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  width: 40%;
+  padding: 0 10px;
+}
+.menuItem{
+  display: inline-block;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  width: 30%;
+  padding: 0 10px;
+}
 .footerlink{
   display: inline-block;
   position: relative;
