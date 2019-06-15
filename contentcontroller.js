@@ -16,7 +16,7 @@ app.config(function($routeProvider) {
 });
 
 angular.module("myApp").controller('familyDayController',function($scope){
-    var $scope.desktopView = true;
+    $scope.desktopView = true;
 
     if(window.screen.availWidth < 700){
         $scope.desktopView = false;
