@@ -234,6 +234,7 @@ margin: auto;
   width: 55%;
   padding: 0 10px;
   height: 100%;
+  float: left;
 }
 .wrap_logo{
   display: inline-block;
