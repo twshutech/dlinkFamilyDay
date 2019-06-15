@@ -24,6 +24,7 @@ angular.module("myApp").controller('familyDayController',function($scope){
 
     $(window).resize(function(){
         console.log (window.screen.availWidth)
+        console.log (window.screen.availWidth < 700)
         if(window.screen.availWidth < 700){
             $scope.desktopView = false;
         }
