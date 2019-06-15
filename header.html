@@ -5,14 +5,15 @@
                 </span>
         </div>
         <div class="menuWrap">
-                <a class="menuItem" href="" target="_blank">
+                <a ng-if="desktopView" class="menuItem" href="" target="_blank">
                         <span>活動流程</span>
                 </a>
-                <a class="menuItem" href="">
+                <a ng-if="desktopView" class="menuItem" href="">
                         <span>地圖</span>
                 </a>
-                <a class="menuItem" href="">
+                <a ng-if="desktopView" class="menuItem" href="">
                         <span>注意事項</span>
                 </a>
+                <i ng-if="!desktopView" class="fa fa-align-justify" style="font-size:20px;color:white"></i>
         </div>
 </div>

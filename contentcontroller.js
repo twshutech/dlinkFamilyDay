@@ -16,6 +16,8 @@ app.config(function($routeProvider) {
 });
 
 angular.module("myApp").controller('familyDayController',function($scope){
-    console.log (window.screen.availWidth)
+    $(window).resize(function(){
+        console.log (window.screen.availWidth)
+    })
 
 });
