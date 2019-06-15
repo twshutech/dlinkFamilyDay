@@ -23,12 +23,12 @@ angular.module("myApp").controller('familyDayController',function($scope){
     }
 
     $(window).resize(function(){
-        console.log ($scope.desktopView)
-        console.log (window.screen.availWidth)
         if(window.screen.availWidth < 700){
             $scope.desktopView = false;
+            console.log ('mobile view');
         }
         else{
+            console.log ('desktop view');
             $scope.desktopView = true;
         }
     });
