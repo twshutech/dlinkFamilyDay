@@ -24,12 +24,12 @@ angular.module("myApp").controller('headerController',function($scope){
 
     $(window).resize(function(){
         if(window.screen.availWidth < 700){
-            this.desktopView = false;
+            $scope.desktopView = false;
             console.log ('mobile view');
         }
         else{
             console.log ('desktop view');
-            this.desktopView = true;
+            $scope.desktopView = true;
         }
     });
 
