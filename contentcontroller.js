@@ -14,3 +14,8 @@ app.config(function($routeProvider) {
         templateUrl : "https://twshutech.github.io/demo.github.io/contact.html"
     });
 });
+
+app.controller('familyDayController',function($scope){
+    console.log 'window.screen.availWidth',window.screen.availWidth
+
+});
