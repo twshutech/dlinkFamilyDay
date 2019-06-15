@@ -233,6 +233,10 @@ margin: auto;
   text-align: center;
   width: 55%;
   padding: 0 10px;
+  height: 100%;
+}
+.wrap_logo{
+  display: inline-block;
 }
 .img_logo{
   width: 190px;
