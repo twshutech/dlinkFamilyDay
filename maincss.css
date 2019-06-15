@@ -97,7 +97,7 @@ border-radius: 10px;
   background-color:#fff;
   height:50px; 
 }
-.header>span{
+a.menuItem>span{
   color:#000;
   
 }
