@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
     });
 });
 
-angular.module("myApp").controller('headerController',function($scope){
+angular.module("myApp").controller('headerController',function($scope, $window){
     $scope.desktopView = true;
 
     if(window.screen.availWidth < 700){
