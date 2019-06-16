@@ -51,11 +51,6 @@ app.directive('windowDetection', ['$window', function ($window) {
                }
            };
 
-           function cleanUp() {
-               angular.element($window).off('resize', onResize);
-           }
-
-           angular.element($window).on('resize', onResize);
-           scope.$on('$destroy', cleanUp);
+           angular.element($window).bind('resize', onResize);
     }    
 }]);
