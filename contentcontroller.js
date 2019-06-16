@@ -35,7 +35,9 @@ function Ctrl($scope, $window){
     $scope.closeMenu = function(e){
         var target = e.currentTarget;
         console.log(target);
-        $scope.desktopView = false;
+        if($window.innerWidth < 700){
+            $scope.desktopView = false;
+        }
     }
 }
 
