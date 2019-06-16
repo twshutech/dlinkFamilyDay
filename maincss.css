@@ -246,7 +246,6 @@ margin: auto;
   margin: auto;
   text-align: center;
   width: 55%;
-  padding: 0 10px;
   height: 100%;
   float: left;
 }
@@ -264,8 +263,7 @@ margin: auto;
   position: relative;
   margin: auto;
   text-align: center;
-  width: 40%;
-  padding: 0 10px;
+  width: 45%;
 }
 .menuItem{
   display: inline-block;
@@ -276,6 +274,12 @@ margin: auto;
   padding: 0 10px;
   line-height: 50px;
   height: 100%; 
+}
+.option{
+  height: 100%;
+  display: block;
+  position: relative;
+  width: 100%;
 }
 #icon_Menu{
   float: right;
@@ -475,11 +479,17 @@ margin: auto;
     width: 30%;
     padding: 0 10px;
     line-height: 50px;
-    height: 100%; 
+    height: auto; 
   }
   #icon_Menu{
     float: right;
     line-height: 50px;
     display: block; 
+  }
+  .option{
+    height: 100vh;
+    display: block;
+    position: absolute;
+    width: 100%;
   }
 }
