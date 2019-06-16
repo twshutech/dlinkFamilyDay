@@ -18,16 +18,15 @@ app.config(function($routeProvider) {
 function Ctrl($scope, $window){
     $scope.desktopView = true;
     
-    $scope.mobilemenu = function(){
+    $scope.mobilemenu = function(e){
         console.log($scope.desktopView);
     }
     console.log($window.innerWidth);
     if($window.innerWidth < 700){
         $scope.desktopView = false;
-        $scope.mobilemenu = function(){
-            console.log ($('.option'))
+        $scope.mobilemenu = function(e){
+            console.log (e)
             angular.element('.option').addClass('slide');
-            $('.option').addClass('slide');
             $scope.desktopView = !$scope.desktopView;
             console.log($window.innerWidth);
         }
