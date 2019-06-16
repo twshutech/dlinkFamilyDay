@@ -496,7 +496,7 @@ margin: auto;
   }
   .option{
     height: 100vh;
-    display: block;
+    display: none;
     position: absolute;
     width: 100%;
     background-color: hsl(190, 61%, 39%);
