@@ -490,6 +490,7 @@ margin: auto;
     float: right;
     line-height: 50px;
     display: block; 
+    height: 100%;
   }
   .option{
     height: 100vh;
