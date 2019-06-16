@@ -25,6 +25,7 @@ function Ctrl($scope, $window){
     if($window.innerWidth < 700){
         $scope.desktopView = false;
         $scope.mobilemenu = function(){
+            $scope.desktopView = !$scope.desktopView;
             console.log($window.innerWidth);
         }
     }
