@@ -27,6 +27,7 @@ function Ctrl($scope, $window){
         $scope.mobilemenu = function(){
             console.log ($('.option'))
             angular.element('.option').addClass('slide');
+            $('.option').addClass('slide');
             $scope.desktopView = !$scope.desktopView;
             console.log($window.innerWidth);
         }
