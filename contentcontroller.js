@@ -32,7 +32,7 @@ function Ctrl($scope, $window){
     }
     
     $scope.closeMenu = function(e){
-        console.log(e);
+        console.log(e.currentTarget);
         $scope.desktopView = false;
     }
 }
