@@ -225,7 +225,17 @@ a.menuItem>span{
   bottom: 0%;
   position: fixed;
   width: 100%;
-  }
+}
+.footer{
+  border-top:2px solid #278da2;
+  height:50px; 
+}
+div.footer>span{
+  margin: auto;
+  color: grey;
+  text-align: center;
+  display: block;
+}
 .footer div{
 width: 100px;
 display: block;
