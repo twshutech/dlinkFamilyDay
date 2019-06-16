@@ -491,6 +491,8 @@ margin: auto;
     line-height: 50px;
     display: block; 
     height: 100%;
+    position: relative;
+    right: 5px;
   }
   .option{
     height: 100vh;
