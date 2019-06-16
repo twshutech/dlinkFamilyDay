@@ -16,13 +16,14 @@ app.config(function($routeProvider) {
 });
 
 function Ctrl($scope, $window){
+    $scope.desktopView = true;
     
-    $scope.mobilemenu = function(){
-        console.log(window.screen.availWidth);
-    }
+    
 
     if(window.screen.availWidth < 700){
-        console.log($scope.desktopView);
+        $scope.mobilemenu = function(){
+            console.log(window.screen.availWidth);
+        }
     }
 }
 
@@ -31,7 +32,7 @@ app.controller('familydayController', ["$scope", "$window", Ctrl]);
 app.directive('windowDetection', ['$window', function ($window) {
     return {
        link: link,
-       restrict: 'A'           
+       restrict: 'A'     
     };
     function link(scope, element, attrs){
        scope.width = $window.innerWidth;
