@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ["ngRoute"]);
+var app = angular.module("myApp", ["ngRoute",]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
     });
 });
 
-function Ctrl(){
+function Ctrl($scope){
     $scope.desktopView = true;
 
     if(window.screen.availWidth < 700){
@@ -24,7 +24,7 @@ function Ctrl(){
     }
 }
 
-app.controller('familydayController', Ctrl);
+app.controller('familydayController', ["$scope", Ctrl]);
 
 app.directive('resize',['$window',function($window){
     return {
