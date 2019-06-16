@@ -49,9 +49,10 @@ app.directive('windowDetection', ['$window', function ($window) {
                 scope.width = $window.innerWidth;
                 scope.$digest();
             }
-            $scope.$apply();
         }
 
-        angular.element($window).bind('resize', onResize);
+        angular.element($window).bind('resize', function(){
+            scope.$apply();
+        });
     }    
 }]);
