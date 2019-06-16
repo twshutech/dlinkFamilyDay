@@ -33,7 +33,8 @@ function Ctrl($scope, $window){
     }
     
     $scope.closeMenu = function(e){
-        console.log(e);
+        var target = e.currentTarget;
+        console.log(target.hasClass('main_content'));
         $scope.desktopView = false;
     }
 }
