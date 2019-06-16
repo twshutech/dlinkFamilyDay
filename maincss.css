@@ -499,4 +499,7 @@ margin: auto;
     width: 100%;
     background-color: hsl(190, 61%, 39%);
   }
+  .slide{
+    transition: 1s;
+  }
 }
