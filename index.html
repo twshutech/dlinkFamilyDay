@@ -42,7 +42,7 @@
             <img src="img/dlink.png" alt="dlink" class="img_logo">
           </span>
         </div>
-        <div class="menuWrap" windowDetection>
+        <div class="menuWrap" ng-click='$event.stopPropagation()' windowDetection>
           <a id="icon_Menu" ng-click="mobilemenu()">
               <i class="fa fa-align-justify" style="font-size:40px;color:#278da2; vertical-align: middle"></i>
           </a>
@@ -64,7 +64,7 @@
           <div class="Progressbar"><p></p></div>
         </div> -->
     </div>
-    <div ng-view></div>
+    <div ng-view ng-mouseup="closeMenu()"></div>
     <footer ng-include="'https://twshutech.github.io/dlinkFamilyDay/footer.html'" id="footer">
     </footer>
   </div>

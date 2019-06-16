@@ -29,6 +29,10 @@ function Ctrl($scope, $window){
             console.log($window.innerWidth);
         }
     }
+    
+    $scope.closeMenu = function(){
+        $scope.desktopView = false;
+    }
 }
 
 app.controller('familydayController', ["$scope", "$window", Ctrl]);
