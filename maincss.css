@@ -481,6 +481,9 @@ margin: auto;
     line-height: 50px;
     height: auto; 
   }
+  a.menuItem>span{
+    color:#fff; 
+  }
   #icon_Menu{
     float: right;
     line-height: 50px;
@@ -491,5 +494,6 @@ margin: auto;
     display: block;
     position: absolute;
     width: 100%;
+    background-color: hsl(190, 61%, 39%);
   }
 }

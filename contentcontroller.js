@@ -15,13 +15,16 @@ app.config(function($routeProvider) {
     });
 });
 
-app.controller('familydayController',function($scope){
+function Ctrl(){
     $scope.desktopView = true;
 
     if(window.screen.availWidth < 700){
         $scope.desktopView = false;
+        console.log($scope.desktopView);
     }
-});
+}
+
+app.controller('familydayController', Ctrl);
 
 app.directive('resize',['$window',function($window){
     return {
