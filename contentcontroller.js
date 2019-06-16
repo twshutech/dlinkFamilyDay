@@ -18,7 +18,9 @@ app.config(function($routeProvider) {
 function Ctrl($scope, $window){
     $scope.desktopView = true;
     
-    
+    $scope.mobilemenu = function(){
+        console.log($scope.desktopView);
+    }
 
     if(window.screen.availWidth < 700){
         $scope.mobilemenu = function(){
