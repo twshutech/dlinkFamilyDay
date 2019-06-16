@@ -40,18 +40,9 @@ app.directive('windowDetection', ['$window', function ($window) {
     };
     function link(scope, element, attrs){
         scope.width = $window.innerWidth;
-       
-        function onResize(){
-            console.log($window.innerWidth);
-            // uncomment for only fire when $window.innerWidth change   
-            if (scope.width !== $window.innerWidth)
-            {
-                scope.width = $window.innerWidth;
-                scope.$digest();
-            }
-        }
 
         angular.element($window).bind('resize', function(){
+            console.log($window.innerWidth);
             scope.$apply();
         });
     }    
