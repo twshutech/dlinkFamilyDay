@@ -17,7 +17,7 @@ app.config(function($routeProvider) {
 
 function Ctrl($scope){
     $scope.desktopView = true;
-
+    console.log($scope.desktopView);
     if(window.screen.availWidth < 700){
         $scope.desktopView = false;
         console.log($scope.desktopView);
