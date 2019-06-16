@@ -26,7 +26,7 @@ function Ctrl($scope, $window){
         $scope.desktopView = false;
         $scope.mobilemenu = function(e){
             console.log (e.originalEvent.path[2]);
-            console.log (e.target.nextElementSibling);
+            console.log (e.target.parentElement);
             angular.element('.option').addClass('slide');
             $scope.desktopView = !$scope.desktopView;
         }
