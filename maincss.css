@@ -265,6 +265,7 @@ margin: auto;
   margin: auto;
   text-align: center;
   width: 45%;
+  height: 100%;
 }
 .menuItem{
   display: inline-block;
