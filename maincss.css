@@ -225,6 +225,7 @@ a.menuItem>span{
   bottom: 0%;
   position: fixed;
   width: 100%;
+  z-index: -1;
 }
 .footer{
   border-top:2px solid #278da2;
@@ -472,7 +473,7 @@ margin: auto;
     height: 10px;
   }
   .menuItem{
-    display: none;
+    display: block;
     position: relative;
     margin: auto;
     text-align: center;

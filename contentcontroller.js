@@ -15,31 +15,29 @@ app.config(function($routeProvider) {
     });
 });
 
-function Ctrl($scope){
-    $scope.desktopView = true;
-    console.log($scope.desktopView);
+function Ctrl($scope, $window){
+    
+    $scope.mobilemenu = function(){
+        console.log(window.screen.availWidth);
+    }
+
     if(window.screen.availWidth < 700){
-        $scope.desktopView = false;
         console.log($scope.desktopView);
     }
 }
 
-app.controller('familydayController', ["$scope", Ctrl]);
+app.controller('familydayController', ["$scope", "$window", Ctrl]);
 
 app.directive('resize',['$window',function($window){
     return {
-        link: function($scope){
-            angular.element($window).bind('resize', function(){
-                if(window.screen.availWidth < 700){
-                    $scope.desktopView = false;
-                    console.log ('mobile view'+$scope.desktopView);
-                }
-                else{
-                    $scope.desktopView = true;
-                    console.log ('desktop view'+$scope.desktopView);
-                }
-                $scope.$apply();
-            });
-        }
-    }
+        link: link,
+        restrict: 'A'           
+     };
+
+     function link(scope, element, attrs){
+
+       angular.element($window).bind('resize', function(){
+           console.log($window.innerWidth);
+       });    
+     } 
 }]);
