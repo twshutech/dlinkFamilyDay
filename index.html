@@ -23,12 +23,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
   <link rel="stylesheet" href="maincss.css">
-  <script>
-    var callbackFunction = function(data) {
-      var wind = data.query.results.channel.wind;
-      alert(wind.chill);
-    };
-  </script>
 
      <title>D-Link Family day</title>
 </head>
@@ -45,10 +39,10 @@
               <i class="fa fa-align-justify" style="font-size:40px;color:#278da2; vertical-align: middle"></i>
           </a>
           <div class="option hideItem optionItem">
-            <a class="menuItem optionItem" href="" ng-click='$event.stopPropagation()'>
+            <a class="menuItem optionItem" href="./" ng-click='$event.stopPropagation()'>
               <span class="optionItem">活動流程</span>
             </a>
-            <a class="menuItem optionItem" href="" ng-click='$event.stopPropagation()'>
+            <a class="menuItem optionItem" href="#!map" ng-click='$event.stopPropagation()'>
               <span class="optionItem">地圖</span>
             </a>
             <a class="menuItem optionItem" href="" ng-click='$event.stopPropagation()'>
@@ -62,7 +56,7 @@
           <div class="Progressbar"><p></p></div>
         </div> -->
     </div>
-    <div ng-view class="contentView"></div>
+    <div ng-view ></div>
     <footer ng-include="'./footer.html'" id="footer">
     </footer>
   </div>

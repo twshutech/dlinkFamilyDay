@@ -12,7 +12,7 @@ a,a:hover,a:active{
 table{width: 100%;}
 .tg  {border-collapse:collapse;border-spacing:0;border-width:1px;border-style:solid;border-color:#bbb;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#ade1eb;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#46bbd2;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#bbb;color:#fff;background-color:#46bbd2;}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 .tg .tg-0lax{text-align:left;vertical-align:top}
 .tg .tg-sjuo{background-color:#C2FFD6;text-align:left;vertical-align:top}
@@ -29,58 +29,6 @@ table{width: 100%;}
   color: #fff;
   text-align: center;
 }
-.shutech{
-  display: block;
-  position: relative;
-  width: 305px;
-  margin: auto;
-  border-radius: 50%;
-  background-color: lightyellow;
-  animation-name: transform;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear
-}
-#hire p{
-  color: #fff;
-  font-size: 24px;
-  text-align: left;
-}
-#hire input{
-  width: 60%;
-  height: 36px;
-  border-radius: 10px;
-  font-size: 20px;
-  color: #404040;
-}
-#hire form{
-width: 50%;
-display: block;
-margin: auto;
-text-align: center;
-background-color: hsl(0, 0%, 65%,0.1);
-border-radius: 10px;
-}
-@keyframes  transform{
-  0%{ 
-  
-  transform: scale(0.8);
-}  
-  100%{ 
-
-  transform: scale(1);}}
-@-webkit-keyframes transform {
-  0%{
-
-  transform: scale(0.8);}
-  100%{ 
-
-  transform: scale(1);
-}}
-/* #portbtn,#contactpage{
-  display: none;
-} */
-
 .menubtn{
   display: block;
   margin: auto;
@@ -106,37 +54,9 @@ border-radius: 10px;
 a.menuItem>span{
   color:#278da2; 
 }
-/* .menubtn:active{
-  animation-name: colourshape;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear
-} */
-#gohire{
-  padding: 10px;
-  background-color: #3399ff;
-  cursor: pointer;
-  outline: 0;
-  color:#fff;
-  border: 0;
-  margin-top: 10px;
-}
-#skillnew p,#portfolionew p{
-  border-left: 3px solid #3399ff;
-  padding: 0 10px;
-}
 #circuit p{
   color: #fff;
   text-align: center;
-  font-size: 16px;
-}
-#seo h2{
-  color: #fff;
-  text-align: center;
-}
-#seo p{
-  color: #fff;
-  text-align: left;
   font-size: 16px;
 }
 .menu{
@@ -152,58 +72,35 @@ a.menuItem>span{
   display: block;
   margin: auto;
 }
-#ost{
-  width: 85% !important;
-}
-#ost,#ziran{
-  padding: 65px 0;
-}
 .col-sm-4 h2 , .col-sm-4 p{
   color: #fff
 }
 .mian_content{
   width: 100%
 }
-/* #ziran:hover{
-  filter: blur(5px);
-} */
-#googleresult:hover .showresult{
-  display: block;
-  position: absolute;
-}
-.showresult{
-  position: absolute;
-  display: none;
-  color: #ffff00;
-  top: 50px;
-  left: 25%;
-}
 #menuskill{
   min-width: 63px
-}
-#portfolionew, #hire {
-  display: block;
-  width: 80%;
-  margin: auto;
-  position: relative;
-
 }
 #frontend{
   height: 265px;
   display: block;
 }
-.leftin{
-  animation-name:animateleft;
-  animation-duration: 1s;
-  animation-timing-function: linear; 
-}
-
 .blockanimate{
   animation-name:animateblock;
   animation-duration: 1s;
   animation-timing-function: linear; 
 }
-
+.diyImage{
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  position: relative;
+}
+.imgContent{
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+}
 #skillnew{
   width: 80%;
   margin: auto;
@@ -215,6 +112,7 @@ a.menuItem>span{
   margin: auto;
   position: relative;
   padding: 11.8% 0;
+  z-index: -1;
 }
 #frontpage p{
   text-align: center;
@@ -230,9 +128,10 @@ a.menuItem>span{
 }
 #footer{
   bottom: 0%;
-  position: fixed;
   width: 100%;
   z-index: -1;
+  position:absolute;
+  background: #fff;
 }
 .footer{
   border-top:2px solid #278da2;
@@ -258,13 +157,15 @@ margin: auto;
   float: left;
 }
 .wrap_logo{
+  height: 100%;
   display: inline-block;
   line-height: 50px;
   vertical-align: text-bottom;
 }
 .img_logo{
-  width: 190px;
-  height: 34px;
+  width: 55%;
+  height: auto;
+  display: block;
 }
 .contentView{
   z-index: -1;
@@ -311,28 +212,6 @@ margin: auto;
 #skillpic>div:hover{
   transform: scale(1.1)
 }
-.barholder{
-  width: 100%;
-  background-color: #c3c3c3;
-  height: 30px;
-}
-.Progressbar{
-  background-color:green ;
-  height: 100%;
-  width: 30%;
-  -webkit-transition: width 2s; 
-  transition: width 2s;
-  
-}
-.Progressbar p{
-  text-align: center;
-  color: #fff;
-  line-height: 30px;
-  position: absolute;
-  display: block;
-  margin: auto;
-  width: 100%;
-}
 ::-webkit-input-placeholder { 
   font-size:15px;
 }
@@ -348,84 +227,6 @@ margin: auto;
  
   font-size:15px;
 }
-#plink{
-  padding: 0;
-}
-#plink li{
-  margin: 10px auto;
-}
-#plink li a,#googleresult{
-  padding: 10px;
-  width: 50%;
-  display: block;
-  font-weight: bold;
-  background-color:#3399ff;
-}
-@keyframes  colourshape{
-  0%{ 
-    /*transform: scale(0);*/
-    color:#660000}  
-  100%{ 
-   color:#80e5ff}
-}
-@-webkit-keyframes colourshape {
-  0%{
-    color:#660000}
-  100%{ 
-    color:#80e5ff}
-}
-
-@keyframes animateleft{
-  0%{ 
-    /*transform: scale(0);*/
-    left:100vw;
-    
-    opacity:0}
-  100%{ 
-    /*transform: scale(1);*/
-    left: 0;
-    
-    opacity:1}
-}
-@-webkit-keyframes animateleft {
-  0%{
-    left:100vw;
-    
-     /*transform: scale(0);*/
-     opacity:0}
-  100%{ 
-    left: 0;
-    
-    /*transform: scale(1);*/
-    opacity:1}
-}
-
-@keyframes animateblock{
-  0%{ 
-    /*transform: scale(0);*/
-   
-    transform: rotateY(90deg);
-    opacity:0}
-  100%{ 
-    /*transform: scale(1);*/
-  
-    transform: rotateY(0);
-    opacity:1}
-}
-@-webkit-keyframes animateblock {
-  0%{
-    
-    transform: rotateY(90deg);
-     /*transform: scale(0);*/
-     opacity:0}
-  100%{ 
-    
-    transform: rotateY(0);
-    /*transform: scale(1);*/
-    opacity:1}
-}
-
-
 @media only screen and (max-width: 770px) {
   #frontpage a{
     width: 80%;
@@ -515,5 +316,22 @@ margin: auto;
   }
   .slide{
     transition: 1s;
+  }
+  .img_logo{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .imgContent{
+    width: 100%;
+    height: 300px;
+    overflow-x:auto;
+  }
+  .diyImage{
+    width: 100%;
+    display: inline-block;
+  }
+  .contentView{
+    z-index: -1;
   }
 }
