@@ -9,11 +9,13 @@ a,a:hover,a:active{
   text-decoration: none;
   color:#fff;
 }
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+table{width: 100%;}
+.tg  {border-collapse:collapse;border-spacing:0;border-width:1px;border-style:solid;border-color:#bbb;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#ade1eb;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#46bbd2;}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 .tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-sjuo{background-color:#C2FFD6;text-align:left;vertical-align:top}
 #htmlcode h2{
   color: #fff;
   text-align: center;
@@ -264,6 +266,9 @@ margin: auto;
   width: 190px;
   height: 34px;
 }
+.contentView{
+  z-index: -1;
+}
 .menuWrap{
   display: inline-block;
   position: relative;
@@ -481,6 +486,7 @@ margin: auto;
     height: 10px;
   }
   .menuItem{
+    z-index: 1;
     display: block;
     position: relative;
     margin: auto;

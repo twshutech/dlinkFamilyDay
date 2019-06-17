@@ -34,6 +34,9 @@ function Ctrl($scope, $window, $document){
             }
         });
     }
+    else{
+        $('.option').removeClass('hideItem');
+    }
 }
 
 
