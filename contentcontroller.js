@@ -2,16 +2,16 @@ var app = angular.module("myApp", ["ngRoute",]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "./dlinkFamilyDay/frontpage.html"
+        templateUrl : "./frontpage.html"
     })
     .when("/skills", {
-        templateUrl : "./dlinkFamilyDay/skills"
+        templateUrl : "./skills"
     })
     .when("/portfolio", {
-        templateUrl : "./dlinkFamilyDay/portfolio.html"
+        templateUrl : "./portfolio.html"
     })
     .when("/contact", {
-        templateUrl : "./dlinkFamilyDay/contact.tml"
+        templateUrl : "./contact.tml"
     });
 });
 
