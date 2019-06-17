@@ -482,8 +482,8 @@ margin: auto;
     text-align: center;
     width: 100%;
     padding: 0 10px;
-    line-height: 50px;
-    height: auto; 
+    height: 14%;
+    min-height: 50px;
   }
   a.menuItem>span{
     color:#fff; 
