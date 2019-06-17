@@ -16,36 +16,26 @@ app.config(function($routeProvider) {
 });
 
 function Ctrl($scope, $window, $document){
-    $scope.desktopView = true;
-    
-    $scope.mobilemenu = function(e){
-        console.log($scope.desktopView);
-    }
-    console.log($window.innerWidth);
-    angular.element(document).ready(function (){
-        if($window.innerWidth < 700){
-            $scope.desktopView = false;
-            $scope.mobilemenu = function(e){
-                //console.log(angular.element($('.option')));
-                angular.element(e.target).addClass('slide');
-                $scope.desktopView = !$scope.desktopView;
+
+    if($window.innerWidth < 700){
+        $scope.mobilemenu = function(e){
+            $scope.desktopView = !$scope.desktopView;
+            $('.option').removeClass('hideItem');
+        }
+        $document.mouseup(function(e){
+            console.log(e.target);
+            if(!$(e.target).hasClass('optionItem')){
+                $('.option').addClass('hideItem');
             }
-        }
-    });
-    $scope.closeMenu = function(e){
-        var target = e.currentTarget;
-        console.log(target);
-        if($window.innerWidth < 700){
-            $scope.desktopView = false;
-        }
+            else if ($(e.target).hasClass('fa-align-justify')){
+                $('.option').removeClass('hideItem');
+            }
+            else{
+                console.log('main content'+e.target);
+            }
+        });
     }
-    angular.element(document).bind('mouseup', function(e){
-        if(!$(e.target).hasClass('optionItem')){
-            $scope.desktopView = false;
-        }
-            
-        console.log($(e.target).hasClass('optionItem'));
-    });
+    
 }
 
 

@@ -282,6 +282,9 @@ margin: auto;
   position: relative;
   width: 100%;
 }
+.hideItem{
+  display: none;
+}
 #icon_Menu{
   float: right;
   line-height: 50px;
