@@ -334,4 +334,8 @@ margin: auto;
   .contentView{
     z-index: -1;
   }
+  #map{
+    width: 100%;
+    height: auto;
+  }
 }
