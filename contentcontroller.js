@@ -34,7 +34,6 @@ function Ctrl($scope, $window, $document){
             }
         });
     }
-    
 }
 
 
