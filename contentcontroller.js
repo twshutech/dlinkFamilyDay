@@ -22,8 +22,7 @@ function Ctrl($scope, $window, $document){
             $scope.desktopView = !$scope.desktopView;
             $('.option').removeClass('hideItem');
         }
-        $document.mouseup(function(e){
-            console.log(e.target);
+        $window.addEventListener('touchstart', function(e) {
             if(!$(e.target).hasClass('optionItem')){
                 $('.option').addClass('hideItem');
             }
