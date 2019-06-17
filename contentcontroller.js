@@ -40,7 +40,11 @@ function Ctrl($scope, $window, $document){
         }
     }
     angular.element(document).bind('mouseup', function(e){
-        console.log($(e.target).hasClass('menuItem'));
+        if(!$(e.target).hasClass('optionItem')){
+            $scope.desktopView = false;
+        }
+            
+        console.log($(e.target).hasClass('optionItem'));
     });
 }
 
