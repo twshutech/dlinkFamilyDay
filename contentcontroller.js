@@ -7,12 +7,9 @@ app.config(function($routeProvider) {
     .when("/map", {
         templateUrl : "./map.html"
     })
-    .when("/portfolio", {
-        templateUrl : "./portfolio.html"
+    .when("/caution", {
+        templateUrl : "./caution.html"
     })
-    .when("/contact", {
-        templateUrl : "./contact.tml"
-    });
 });
 
 function Ctrl($scope, $window, $document){
