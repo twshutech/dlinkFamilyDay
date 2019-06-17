@@ -11,27 +11,27 @@ app.config(function($routeProvider) {
         templateUrl : "https://twshutech.github.io/dlinkFamilyDay/portfolio.html"
     })
     .when("/contact", {
-        templateUrl : "https://twshutech.github.io/dlinkFamilyDay/contact.html"
+        templateUrl : "https://twshutech.github.io/dlinkFamilyDay/contact.tml"
     });
 });
 
-function Ctrl($scope, $window){
+function Ctrl($scope, $window, $document){
     $scope.desktopView = true;
     
     $scope.mobilemenu = function(e){
         console.log($scope.desktopView);
     }
     console.log($window.innerWidth);
-    if($window.innerWidth < 700){
-        $scope.desktopView = false;
-        $scope.mobilemenu = function(e){
-            console.log (e.originalEvent.path[2]);
-            console.log (e.target.parentElement.siblings());
-            angular.element('.option').addClass('slide');
-            $scope.desktopView = !$scope.desktopView;
+    angular.element(document).ready(function (){
+        if($window.innerWidth < 700){
+            $scope.desktopView = false;
+            $scope.mobilemenu = function(e){
+                //console.log(angular.element($('.option')));
+                angular.element(e.target).addClass('slide');
+                $scope.desktopView = !$scope.desktopView;
+            }
         }
-    }
-    
+    });
     $scope.closeMenu = function(e){
         var target = e.currentTarget;
         console.log(target);
@@ -39,9 +39,13 @@ function Ctrl($scope, $window){
             $scope.desktopView = false;
         }
     }
+    angular.element(document).bind('mouseup', function(e){
+        console.log($(e.target).hasClass('menuItem'));
+    });
 }
 
-app.controller('familydayController', ["$scope", "$window", Ctrl]);
+
+app.controller('familydayController', ["$scope", "$window", "$document", Ctrl]);
 
 app.directive('windowDetection', ['$window', function ($window) {
     return {

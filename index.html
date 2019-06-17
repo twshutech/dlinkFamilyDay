@@ -35,7 +35,7 @@
 
 </head>
 <body ng-app="myApp"ng-controller="familydayController">
-  <div class="main_content" id="home" ng-mouseup="closeMenu($event)">
+  <div class="main_content" id="home">
     <div class="header" id="menu" >
         <div  class="logo">
           <span class="wrap_logo">
@@ -65,7 +65,7 @@
         </div> -->
     </div>
     <div ng-view></div>
-    <footer ng-include="'https://twshutech.github.io/dlinkFamilyDay/footer.html'" id="footer">
+    <footer ng-include="'./footer.html'" id="footer">
     </footer>
   </div>
 </body>
