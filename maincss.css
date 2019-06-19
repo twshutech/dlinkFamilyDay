@@ -130,7 +130,7 @@ a.menuItem>span{
   bottom: 0%;
   width: 100%;
   z-index: -1;
-  position:absolute;
+  position: relative;;
   background: #fff;
 }
 .footer{
