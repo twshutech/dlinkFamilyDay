@@ -360,4 +360,14 @@ margin: auto;
   .optionItem{
     font-size:20px;
   }
+  .fullScreenWidth{
+    width: 100%
+  }
+  .btn{
+    width: 100%;
+    background-color: #278da2;
+    border: 1px solid #278da2;
+    border-radius: 5px;
+    color:#fff
+  }
 }
