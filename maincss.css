@@ -348,4 +348,10 @@ margin: auto;
     margin: 0;
     padding: 0;
   }
+  ul span{
+    font-size: 18px;
+  }
+  ul{
+    padding: 0;
+  }
 }
