@@ -40,18 +40,26 @@
               <i class="fa fa-align-justify" style="font-size:40px;color:#278da2; vertical-align: middle"></i>
           </a>
           <div class="option hideItem optionItem">
-            <a class="menuItem optionItem" href="./" ng-click='$event.stopPropagation()'>
-              <i class="fas fa-calendar-alt"></i>
-              <span class="optionItem">活動流程</span>
-            </a>
-            <a class="menuItem optionItem" href="#!map" ng-click='$event.stopPropagation()'>
-                <i class="fas fa-map-marked-alt"></i>
-              <span class="optionItem">地圖</span>
-            </a>
-            <a class="menuItem optionItem" href="#!caution" ng-click='$event.stopPropagation()'>
-                <i class="fas fa-info-circle"></i>
-              <span class="optionItem">注意事項</span>
-            </a>
+            <ul class="menuList">
+              <li class="menuItem optionItem">
+                  <a href="./" ng-click='$event.stopPropagation()'>
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="optionItem">活動流程</span>
+                  </a>
+              </li>
+              <li>
+                <a class="menuItem optionItem" href="#!map" ng-click='$event.stopPropagation()'>
+                  <i class="fas fa-map-marked-alt"></i>
+                  <span class="optionItem">地圖</span>
+                </a>
+              </li>
+              <li>
+                <a class="menuItem optionItem" href="#!caution" ng-click='$event.stopPropagation()'>
+                  <i class="fas fa-info-circle"></i>
+                  <span class="optionItem">注意事項</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
     </div>

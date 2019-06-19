@@ -127,10 +127,10 @@ a.menuItem>span{
   height:305px ;
 }
 #footer{
-  bottom: 0%;
+  top: 100vh;
   width: 100%;
   z-index: -1;
-  position: relative;;
+  position: sticky;;
   background: #fff;
 }
 .footer{
@@ -341,5 +341,10 @@ margin: auto;
   #map{
     width: 100%;
     height: 50vh;
+  }
+  .menuList{
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 }
