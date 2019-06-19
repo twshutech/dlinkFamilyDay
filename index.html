@@ -42,19 +42,19 @@
           <div class="option hideItem optionItem">
             <ul class="menuList">
               <li class="menuItem optionItem">
-                  <a href="./" ng-click='$event.stopPropagation()'>
+                  <a href="./" ng-click='$event.stopPropagation();closeMenu()'>
                     <i class="fas fa-calendar-alt"></i>
                     <span class="optionItem">活動流程</span>
                   </a>
               </li>
               <li>
-                <a class="menuItem optionItem" href="#!map" ng-click='$event.stopPropagation()'>
+                <a class="menuItem optionItem" href="#!map" ng-click='$event.stopPropagation();closeMenu()'>
                   <i class="fas fa-map-marked-alt"></i>
                   <span class="optionItem">地圖</span>
                 </a>
               </li>
               <li>
-                <a class="menuItem optionItem" href="#!caution" ng-click='$event.stopPropagation()'>
+                <a class="menuItem optionItem" href="#!caution" ng-click='$event.stopPropagation();closeMenu()'>
                   <i class="fas fa-info-circle"></i>
                   <span class="optionItem">注意事項</span>
                 </a>

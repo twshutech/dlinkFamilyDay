@@ -30,6 +30,9 @@ function Ctrl($scope, $window, $document){
                 console.log('main content'+e.target);
             }
         });
+        $scope.closeMenu = function (){
+            $('.option').addClass('hideItem');
+        }
     }
     else{
         $('.option').removeClass('hideItem');
