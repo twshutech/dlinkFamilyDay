@@ -111,7 +111,7 @@ a.menuItem>span{
   margin: auto;
   position: relative;
   padding: 11.8% 0;
-  z-index: -1;
+  z-index: 5;
 }
 #frontpage p{
   text-align: center;
@@ -196,6 +196,7 @@ margin: auto;
   height: 100%;
   position: relative;
   width: 100%;
+  z-index: 100;
 }
 .hideItem{
   display: none;
@@ -368,5 +369,8 @@ margin: auto;
     border: 1px solid #278da2;
     border-radius: 5px;
     color:#fff
+  }
+  a.btn:active{
+    color: #fff;
   }
 }
