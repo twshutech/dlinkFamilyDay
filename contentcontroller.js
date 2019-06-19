@@ -1,18 +1,22 @@
 var app = angular.module("myApp", ["ngRoute",]);
-app.config(function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "./frontpage.html"
+        templateUrl : "./frontpage.html",
+        controller: 'infoController',
     })
     .when("/map", {
-        templateUrl : "./map.html"
+        templateUrl : "./map.html",
+        controller: 'familydayController'
     })
     .when("/caution", {
-        templateUrl : "./caution.html"
-    })
-});
+        templateUrl : "./caution.html",
+        controller: 'familydayController'
+    });
+    //$locationProvider.html5Mode(true);
+}]);
 
-function Ctrl($scope, $window, $document){
+function Ctrl($scope, $window, $document, $route, $location){
 
     if($window.innerWidth < 700){
         $scope.mobilemenu = function(e){
@@ -31,7 +35,12 @@ function Ctrl($scope, $window, $document){
             }
         });
         $scope.closeMenu = function (){
+            console.log('click')
             $('.option').addClass('hideItem');
+        }
+        
+        $scope.selectDIY = function(item){
+            console.log(item)
         }
     }
     else{
@@ -40,7 +49,20 @@ function Ctrl($scope, $window, $document){
 }
 
 
-app.controller('familydayController', ["$scope", "$window", "$document", Ctrl]);
+app.controller('familydayController', ["$scope", "$window", "$document", "$route", "$location", Ctrl]);
+
+
+function infoCtrl($scope, $window, $document, $route, $location){
+
+    $scope.selectDIY = function(item){
+        console.log(item)
+    }
+    $scope.diySelection = 'ddsdfdfqe21'
+
+}
+
+
+app.controller('infoController', ["$scope", "$window", "$document", "$route", "$location", infoCtrl]);
 
 app.directive('windowDetection', ['$window', function ($window) {
     return {

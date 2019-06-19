@@ -1,4 +1,4 @@
-    <div class="contentView" id="frontpage">
+    <div class="contentView" id="frontpage"   ng-controller="infoController">
       <div id="schedule">
         <span >
           活動流程
@@ -26,28 +26,31 @@
           </tr>
         </table>
       </div>
-      <div class="diyDetail" >
+      <div class="diyDetail" style="display: none">
         <span >
           DIY
         </span>
         <div class="imgContent">
-          <select name="diy" id="diyDropdown">
-            <option value="Fist1">
+          <span>{{diySelection}}</span>
+          <ul >
+            <li ng-ciick="selectDIY(1)">
                 絹印環保袋
-            </option>
-            <option value="Fist1">
+            </li>
+            <li ng-ciick="selectDIY(2)">
                 俏皮貓頭鷹像框
-            </option>
-            <option value="second2">
+            </li>
+            <li ng-ciick="selectDIY(3)">
                 幸福苔玉球
-            </option>
-            <option value="thrid3">
+            </li>
+            <li ng-ciick="selectDIY(4)">
                 松果貓頭鷹
             </option>
-            <option value="four4">
-                貓頭鷹時鐘
-            </option>
-          </select>
+            <li >
+              <a href="" ng-click="selectDIY(5)">
+                  貓頭鷹時鐘
+              </a>
+            </li>
+          </ul>
           <div>
             
             <img src="img/Picture8.png" class="img_logo" style="width: 70%">
