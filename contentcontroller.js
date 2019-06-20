@@ -61,8 +61,8 @@ function infoCtrl($scope, $window, $document, $route, $location){
     $scope.selectDiy = 0
     $scope.showSelection = false
     $scope.diySelection = $scope.selectionArray[0]
-    $scope.selectDIY = function(item){
-        console.log('click')
+    $scope.selectDIY = function(item,e){
+        console.log(e)
         $scope.selectDiy = item
         $scope.diySelection = $scope.selectionArray[$scope.selectDiy]
         $scope.showSelection = false
@@ -70,6 +70,7 @@ function infoCtrl($scope, $window, $document, $route, $location){
 
     $scope.getDiySelection = function(){
         $scope.showSelection = !$scope.showSelection
+        $('div.diyDetail ul').addClass('autoHeight');
     }
 }
 

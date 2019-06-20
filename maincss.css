@@ -420,8 +420,13 @@ margin: auto;
     z-index: 100;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    height: 0px;
   }
   .diyDetail{
     margin-top: 10px;
+  }
+  .autoHeight{
+    transition: height 3s;
+    height: auto !important;
   }
 }
