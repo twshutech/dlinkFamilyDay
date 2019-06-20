@@ -410,13 +410,14 @@ margin: auto;
     width: 49%;
   }
   div.diyDetail ul{
-    background: #6fcadc;
+    background: #ade1eb;
     width: 100%;
     position: absolute;
+    text-align: center;
     border-top: 0;
-    border: 1px solid #6fcadc;
+    color: #595959;
+    border: 1px solid #ade1eb;
     z-index: 100;
-    color: #fff;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
   }
