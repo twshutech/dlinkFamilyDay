@@ -377,4 +377,13 @@ margin: auto;
     line-height: 30px;
     font-size: 14px;
   }
+  ul.bonusUl img{
+    display: inline-block;
+    position: relative;
+    max-width: 45%;
+    margin: auto;
+  }
+  ul.bonusUl span{
+    font-size: 14px;
+  }
 }
