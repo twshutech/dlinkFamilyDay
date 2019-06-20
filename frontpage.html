@@ -1,4 +1,4 @@
-    <div class="contentView" id="frontpage"   ng-controller="infoController" style="height:85vh">
+    <div class="contentView" id="frontpage"   ng-controller="infoController" >
       <div id="schedule">
         <span >
           活動流程
@@ -43,36 +43,52 @@
           </li>
         </ul>
       </div>
-      <div class="diyDetail" style="display:none">
+      <div class="diyDetail">
         <span >
           DIY
         </span>
-        <div class="imgContent">
-          <span>{{diySelection}}</span>
-          <ul >
-            <li ng-ciick="selectDIY(1)">
-                絹印環保袋
-            </li>
-            <li ng-ciick="selectDIY(2)">
-                俏皮貓頭鷹像框
-            </li>
-            <li ng-ciick="selectDIY(3)">
-                幸福苔玉球
-            </li>
-            <li ng-ciick="selectDIY(4)">
-                松果貓頭鷹
-            </option>
-            <li >
-              <a href="" ng-click="selectDIY(5)">
-                  貓頭鷹時鐘
-              </a>
-            </li>
-          </ul>
-          <div>
-            
-            <img src="img/Picture8.png" class="img_logo" style="width: 70%">
+        <div class="selectionDiy" ng-click="getDiySelection()">
+          <span class="selectionValue">{{diySelection}}</span>
+          <span  class="selectionIcon"><i class="fas fa-caret-square-down"></i></span>
+        </div>
+        <ul ng-show="showSelection">
+          <li >
+            <span ng-click="selectDIY(0)">第一站-絹印環保袋</span>
+          </li>
+          <li >
+            <span ng-click="selectDIY(1)">第二站-俏皮貓頭鷹像框</span>
+          </li>
+          <li >
+            <span ng-click="selectDIY(2)">第三站-幸福苔玉球</span>
+          </li>
+          <li >
+            <span ng-click="selectDIY(3)">第四站-松果貓頭鷹</span>
+          <li>
+            <span ng-click="selectDIY(4)">第五站-貓頭鷹時鐘</span>
+          </li>
+        </ul>
+        <div class="diyDetail">
+          <div ng-if="selectDiy == 0">
+            <img src="img/Picture8.png" alt="dlink" class="diy">
+            <img src="img/Picture1.png" alt="dlink" class="diy">
           </div>
-      </div>
-        
+          <div ng-if="selectDiy == 1">
+            <img src="img/Picture10.png" alt="dlink" class="diy">
+            <img src="img/Picture2.png" alt="dlink" class="diy">
+          </div>
+          <div ng-if="selectDiy == 2">
+            <img src="img/Picture12.png" alt="dlink" class="diy">
+            <img src="img/Picture3.png" alt="dlink" class="diy">
+          </div>
+          <div ng-if="selectDiy == 3">
+            <img src="img/Picture14.png" alt="dlink" class="diy">
+            <img src="img/Picture4.png" alt="dlink" class="diy">
+          </div>
+          <div ng-if="selectDiy == 4">
+            <img src="img/Picture16.png" alt="dlink" class="diy">
+            <img src="img/Picture5.png" alt="dlink" class="diy">
+          </div>
+        </div>
       </div>
     </div>
+    

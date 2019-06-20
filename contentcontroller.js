@@ -57,12 +57,20 @@ app.controller('familydayController', ["$scope", "$window", "$document", "$route
 
 
 function infoCtrl($scope, $window, $document, $route, $location){
-
+    $scope.selectionArray = ['絹印環保袋', '俏皮貓頭鷹像框', '幸福苔玉球', '松果貓頭鷹', '貓頭鷹時鐘']
+    $scope.selectDiy = 0
+    $scope.showSelection = false
+    $scope.diySelection = $scope.selectionArray[0]
     $scope.selectDIY = function(item){
-        console.log(item)
+        console.log('click')
+        $scope.selectDiy = item
+        $scope.diySelection = $scope.selectionArray[$scope.selectDiy]
+        $scope.showSelection = false
     }
-    $scope.diySelection = 'ddsdfdfqe21'
 
+    $scope.getDiySelection = function(){
+        $scope.showSelection = !$scope.showSelection
+    }
 }
 
 

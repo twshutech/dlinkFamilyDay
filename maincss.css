@@ -98,7 +98,6 @@ a.menuItem>span{
 .imgContent{
   width: 100%;
   height: 300px;
-  overflow: auto;
 }
 #skillnew{
   width: 80%;
@@ -330,7 +329,6 @@ margin: auto;
   .imgContent{
     width: 100%;
     height: 300px;
-    overflow-x:auto;
   }
   .diyImage{
     width: 100%;
@@ -385,5 +383,44 @@ margin: auto;
   }
   ul.bonusUl span{
     font-size: 14px;
+  }
+  .selectionDiy{
+    font-size: 20px;
+    border: 1px solid #278da2;
+    color: #fff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background: #278da2;
+  }
+  .selectionValue{
+    width: 95%;
+    display: inline-block;
+    text-align: center;
+  }
+  .selectionIcon{
+    width: 5%;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+  }
+  .diy{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 49%;
+  }
+  div.diyDetail ul{
+    background: #6fcadc;
+    width: 100%;
+    position: absolute;
+    border-top: 0;
+    border: 1px solid #6fcadc;
+    z-index: 100;
+    color: #fff;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .diyDetail{
+    margin-top: 10px;
   }
 }
