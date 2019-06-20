@@ -373,4 +373,8 @@ margin: auto;
   a.btn:active{
     color: #fff;
   }
+  ul.scheduleUl span{
+    line-height: 30px;
+    font-size: 14px;
+  }
 }

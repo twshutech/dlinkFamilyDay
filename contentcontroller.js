@@ -12,6 +12,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     .when("/caution", {
         templateUrl : "./caution.html",
         controller: 'familydayController'
+    })
+    .when("/bonus", {
+        templateUrl : "./bonus.html",
+        controller: 'familydayController'
     });
     //$locationProvider.html5Mode(true);
 }]);
