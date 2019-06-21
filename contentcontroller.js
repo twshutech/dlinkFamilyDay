@@ -90,6 +90,10 @@ function transController($scope, $window, $document, $route, $location){
     $scope.selectedTravelMode = $scope.travelMode[0]
     $scope.selectDIY = function(index){
         $scope.diySelection = $scope.selectionArray[index]
+        $scope.selectedTravelMode = $scope.travelMode[index]
+        if(index == 2){
+            $scope.iGoBus = { modes:['BUS'] }
+        }
         $scope.showSelection = false
         var startPos;
         var geoSuccess = function(position) {
@@ -129,7 +133,9 @@ function transController($scope, $window, $document, $route, $location){
             origin: $scope.currentLocation,
             destination: familyDay,
             travelMode: $scope.selectedTravelMode
+            //transitOptions: $scope.iGoBus
         };
+        console.log(request.travelMode);
         directionsService.route(request, function (result, status) {
             if (status == 'OK') {
                 // 回傳路線上每個步驟的細節
