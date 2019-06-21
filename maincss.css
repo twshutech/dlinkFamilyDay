@@ -429,4 +429,7 @@ margin: auto;
     transition: height 3s;
     height: auto !important;
   }
+  ul.showSelection li{
+    text-align: center
+  }
 }

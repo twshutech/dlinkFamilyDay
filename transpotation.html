@@ -1,0 +1,17 @@
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4NaGzVVSECtnYnpJnjUA4UFRdiAakvOU&callback=initMap">
+</script>
+<div id="frontpage" class="diyDetail">
+    <span>交通方式</span>
+    <div class="selectionDiy" ng-click="getDiySelection()">
+        <span class="selectionValue">{{diySelection}}</span>
+        <span  class="selectionIcon"><i class="fas fa-caret-square-down"></i></span>
+    </div>
+    <ul ng-show="showSelection" class="showSelection">
+        <li ng-repeat="item in selectionArray"ng-click="selectDIY($index) ">
+            <span>{{item}}</span>
+        </li>
+    </ul>
+    <div id="map"></div>
+</div>

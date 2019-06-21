@@ -13,6 +13,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl : "./caution.html",
         controller: 'familydayController'
     })
+    .when("/transpotation", {
+        templateUrl : "./transpotation.html",
+        controller: 'transpotationController'
+    })
     .when("/bonus", {
         templateUrl : "./bonus.html",
         controller: 'familydayController'
@@ -76,6 +80,73 @@ function infoCtrl($scope, $window, $document, $route, $location){
 
 
 app.controller('infoController', ["$scope", "$window", "$document", "$route", "$location", infoCtrl]);
+
+function transController($scope, $window, $document, $route, $location){
+    $scope.selectionArray = ['千里之行始於足下,我要走路', '我坐巴士好了', '我是老司機我要開車', '我很有錢我叫Uber代步']
+    $scope.travelMode = ['WALKING', 'TRANSIT ', 'DRIVING']
+    $scope.showSelection = false
+    $scope.diySelection = '你要怎麼去'
+    $scope.currentLocation = { lat: 25.0999136, lng: 121.5222447}
+    $scope.selectedTravelMode = $scope.travelMode[0]
+    $scope.selectDIY = function(index){
+        $scope.diySelection = $scope.selectionArray[index]
+        $scope.showSelection = false
+        var startPos;
+        var geoSuccess = function(position) {
+          startPos = position;
+          $scope.currentLocation = { lat: startPos.coords.latitude , lng: startPos.coords.longitude };
+          initMap()
+        };
+        var geoError = function(position) {
+            console.log('Error occurred. Error code: ' + error.code);
+            // error.code can be:
+            //   0: unknown error
+            //   1: permission denied
+            //   2: position unavailable (error response from location provider)
+            //   3: timed out
+          };
+        navigator.geolocation.getCurrentPosition(geoSuccess,geoError);
+    }
+
+    $scope.getDiySelection = function(){
+        $scope.showSelection = !$scope.showSelection
+        $('div.diyDetail ul').addClass('autoHeight');
+    }
+    
+    // Initialize and add the map
+    $window.initMap = function initMap() {
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+        var familyDay = {lat: 25.100093, lng: 121.530059};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: { lat: 25.034010, lng: 121.562428 }
+        });
+    
+        directionsDisplay.setMap(map);
+        var request = {
+            origin: $scope.currentLocation,
+            destination: familyDay,
+            travelMode: $scope.selectedTravelMode
+        };
+        directionsService.route(request, function (result, status) {
+            if (status == 'OK') {
+                // 回傳路線上每個步驟的細節
+                console.log(result.routes[0].legs[0].steps);
+                directionsDisplay.setDirections(result);
+            } else {
+                console.log(status);
+            }
+        });
+        
+        // The marker, positioned at Uluru
+        //var marker = new google.maps.Marker({position: familyDay, map: map});
+    }
+}
+
+
+app.controller('transpotationController', ["$scope", "$window", "$document", "$route", "$location", transController]);
 
 app.directive('windowDetection', ['$window', function ($window) {
     return {
