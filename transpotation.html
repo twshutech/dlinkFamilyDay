@@ -2,16 +2,44 @@
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4NaGzVVSECtnYnpJnjUA4UFRdiAakvOU&callback=initMap">
 </script>
-<div id="frontpage" class="diyDetail">
+<script scr="https://maps.googleapis.com/maps/api/directions/json?origin=Brooklyn&destination=Queens&mode=transit&key=AIzaSyD4NaGzVVSECtnYnpJnjUA4UFRdiAakvOU"></script>
+<div id="frontpage">
     <span>交通方式</span>
-    <div class="selectionDiy" ng-click="getDiySelection()">
+    <div class="selectionDiy diyDetail" ng-click="getDiySelection()">
         <span class="selectionValue">{{diySelection}}</span>
         <span  class="selectionIcon"><i class="fas fa-caret-square-down"></i></span>
+        <ul ng-show="showSelection" class="showSelection">
+            <li ng-repeat="item in selectionArray"ng-click="selectDIY($index) ">
+                <span>{{item}}</span>
+            </li>
+        </ul>
     </div>
-    <ul ng-show="showSelection" class="showSelection">
-        <li ng-repeat="item in selectionArray"ng-click="selectDIY($index) ">
-            <span>{{item}}</span>
-        </li>
-    </ul>
     <div id="map"></div>
+    <div ng-if="showParkingLotFee">
+        <span>
+            R17芝山站停車場收費
+            假日：
+        </span>
+        <ul>
+            <li>
+                06:00~11:00 30元/時
+            </li>
+            <li>
+                11:00~22:00 40元/時
+            </li>
+            <li>
+                22:00~24:00 30元/時
+            </li>
+            <li>
+                00:00~06:00 10元/時
+            </li>
+        </ul>
+    </div>
+    <div ng-if="showBusPath" class="busDiv">
+        <a href="http://bfy.tw/OJI2" target="_blank">
+            <span>
+                點我進入Google搜尋教我如何到達目的地。
+            </span>
+        </a>
+    </div>
 </div>
