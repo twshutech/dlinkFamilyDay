@@ -83,7 +83,7 @@ app.controller('infoController', ["$scope", "$window", "$document", "$route", "$
 
 function transController($scope, $window, $document, $route, $location){
     $scope.selectionArray = ['千里之行始於足下,我要走路', '我坐巴士好了', '我是老司機我要開車', '我很有錢我叫Uber代步']
-    $scope.travelMode = ['WALKING', 'TRANSIT ', 'DRIVING']
+    $scope.travelMode = ['WALKING','DRIVING']
     $scope.showParkingLotFee = false
     $scope.showSelection = false
     $scope.showBusPath = false;
