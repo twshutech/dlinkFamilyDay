@@ -101,8 +101,9 @@ function transController($scope, $window, $document, $route, $location){
             $scope.showBusPath = true;
             $scope.showParkingLotFee = false;
             $scope.iGoBus = { modes:['BUS'] }
-        }
-        else{
+        }else if(index == 5) {
+            console.log 'uberrr'
+        }else{
             $scope.showParkingLotFee = false;
         }
         $scope.showSelection = false
