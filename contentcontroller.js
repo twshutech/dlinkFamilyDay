@@ -107,7 +107,7 @@ function transController($scope, $window, $document, $route, $location){
             $scope.iGoBus = { modes:['BUS'] }
         }else if(index == 3) {
             console.log('uberrr');
-            window.open(' https://m.uber.com/ul/?client_id=<CLIENT_ID>', '_blank');
+            window.open(' https://m.uber.com/ul/?client_id=<CLIENT_ID>&action=setPickup&dropoff[latitude]=25.034010&dropoff[longitude]=121.562428', '_blank');
         }else{
             $scope.showParkingLotFee = false;
         }
