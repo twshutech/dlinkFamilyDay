@@ -143,11 +143,11 @@ function transController($scope, $window, $document, $route, $location){
         });
     
         directionsDisplay.setMap(map);
+        console.log($scope.selectedTravelMode)
         var request = {
             origin: $scope.currentLocation,
             destination: familyDay,
             travelMode: $scope.selectedTravelMode
-            //transitOptions: $scope.iGoBus
         };
         directionsService.route(request, function (result, status) {
             if (status == 'OK') {
