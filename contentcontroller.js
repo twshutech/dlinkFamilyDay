@@ -148,7 +148,6 @@ function transController($scope, $window, $document, $route, $location){
             travelMode: $scope.selectedTravelMode
             //transitOptions: $scope.iGoBus
         };
-        console.log(request.travelMode);
         directionsService.route(request, function (result, status) {
             if (status == 'OK') {
                 // 回傳路線上每個步驟的細節
