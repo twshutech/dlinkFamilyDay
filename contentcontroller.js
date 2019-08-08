@@ -91,6 +91,7 @@ function transController($scope, $window, $document, $route, $location){
     $scope.currentLocation = { lat: 25.0999136, lng: 121.5222447}
     $scope.selectedTravelMode = $scope.travelMode[0]
     $scope.selectDIY = function(index){
+        console.log($scope.travelMode);
         $scope.diySelection = $scope.selectionArray[index]
         $scope.selectedTravelMode = $scope.travelMode[index]
         if(index == 2){
