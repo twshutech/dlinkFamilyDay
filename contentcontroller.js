@@ -105,7 +105,7 @@ function transController($scope, $window, $document, $route, $location){
             $scope.showBusPath = true;
             $scope.showParkingLotFee = false;
             $scope.iGoBus = { modes:['BUS'] }
-        }else if(index == 5) {
+        }else if(index == 3) {
             console.log('uberrr');
             window.open(' https://m.uber.com/ul/?client_id=<CLIENT_ID>', '_blank');
         }else{
