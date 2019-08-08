@@ -94,6 +94,9 @@ function transController($scope, $window, $document, $route, $location){
         console.log($scope.travelMode);
         $scope.diySelection = $scope.selectionArray[index]
         $scope.selectedTravelMode = $scope.travelMode[index]
+        if(index > 1){
+            $scope.selectedTravelMode = $scope.travelMode[0]
+        }
         if(index == 2){
             $scope.showBusPath = false;
             $scope.showParkingLotFee = true;
