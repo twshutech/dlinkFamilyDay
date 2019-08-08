@@ -102,7 +102,7 @@ function transController($scope, $window, $document, $route, $location){
             $scope.showParkingLotFee = false;
             $scope.iGoBus = { modes:['BUS'] }
         }else if(index == 5) {
-            console.log('uberrr')
+            console.log('uberrr');
             window.open(' https://m.uber.com/ul/?client_id=<CLIENT_ID>', '_blank');
         }else{
             $scope.showParkingLotFee = false;
