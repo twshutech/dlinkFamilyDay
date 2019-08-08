@@ -113,7 +113,7 @@ a.menuItem>span{
   display: block;
   margin: auto;
   position: relative;
-  padding: 11.8% 0;
+  padding: 15% 0;
   z-index: 5;
 }
 #frontpage p{
@@ -236,6 +236,7 @@ margin: auto;
   font-size:15px;
 }
 @media only screen and (max-width: 770px) {
+  
   #frontpage a{
     width: 80%;
     height: 100%;
