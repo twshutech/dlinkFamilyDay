@@ -83,7 +83,7 @@ app.controller('infoController', ["$scope", "$window", "$document", "$route", "$
 
 function transController($scope, $window, $document, $route, $location){
     $scope.selectionArray = ['千里之行始於足下,我要走路', '我坐巴士好了', '我是老司機我要開車', '我很有錢我叫Uber代步']
-    $scope.travelMode = ['WALKING', 'TRANSIT ', 'DRIVING']
+    $scope.travelMode = ['WALKING','DRIVING']
     $scope.showParkingLotFee = false
     $scope.showSelection = false
     $scope.showBusPath = false;
@@ -91,8 +91,12 @@ function transController($scope, $window, $document, $route, $location){
     $scope.currentLocation = { lat: 25.0999136, lng: 121.5222447}
     $scope.selectedTravelMode = $scope.travelMode[0]
     $scope.selectDIY = function(index){
+        console.log(index);
         $scope.diySelection = $scope.selectionArray[index]
         $scope.selectedTravelMode = $scope.travelMode[index]
+        if(index > 1){
+            $scope.selectedTravelMode = $scope.travelMode[0]
+        }
         if(index == 2){
             $scope.showBusPath = false;
             $scope.showParkingLotFee = true;
@@ -101,8 +105,10 @@ function transController($scope, $window, $document, $route, $location){
             $scope.showBusPath = true;
             $scope.showParkingLotFee = false;
             $scope.iGoBus = { modes:['BUS'] }
-        }
-        else{
+        }else if(index == 3) {
+            console.log('uberrr');
+            window.open(' https://m.uber.com/ul/?client_id=<CLIENT_ID>&action=setPickup&dropoff[latitude]=25.0999136&dropoff[longitude]=121.5222447');
+        }else{
             $scope.showParkingLotFee = false;
         }
         $scope.showSelection = false
@@ -140,13 +146,12 @@ function transController($scope, $window, $document, $route, $location){
         });
     
         directionsDisplay.setMap(map);
+        console.log($scope.selectedTravelMode)
         var request = {
             origin: $scope.currentLocation,
             destination: familyDay,
             travelMode: $scope.selectedTravelMode
-            //transitOptions: $scope.iGoBus
         };
-        console.log(request.travelMode);
         directionsService.route(request, function (result, status) {
             if (status == 'OK') {
                 // 回傳路線上每個步驟的細節
