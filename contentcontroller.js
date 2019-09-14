@@ -169,18 +169,3 @@ function transController($scope, $window, $document, $route, $location){
 
 
 app.controller('transpotationController', ["$scope", "$window", "$document", "$route", "$location", transController]);
-
-app.directive('windowDetection', ['$window', function ($window) {
-    return {
-       link: link,
-       restrict: 'A'     
-    };
-    function link(scope, element, attrs){
-        scope.width = $window.innerWidth;
-
-        angular.element($window).bind('resize', function(){
-            console.log($window.innerWidth);
-            scope.$apply();
-        });
-    }    
-}]);
