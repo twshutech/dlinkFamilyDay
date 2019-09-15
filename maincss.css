@@ -447,4 +447,18 @@ margin: auto;
     line-height: 2.2;
     margin: 10px 0px;
   }
+  .imgClass{
+    width: 100%;
+  }
+  .giftList{
+    width: 45%;
+    display: inline-block;
+  }
+  .checkedClass{
+    width: 24px;
+    left: 60%;
+    display: block;
+    top: 35px;
+    position: relative;
+  }
 }

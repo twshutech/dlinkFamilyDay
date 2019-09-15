@@ -20,6 +20,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     .when("/bonus", {
         templateUrl : "./bonus.html",
         controller: 'familydayController'
+    })
+    .when("/start", {
+        templateUrl : "./startFamilyDay.html",
+        controller: 'startFamilyDayController'
     });
     //$locationProvider.html5Mode(true);
 }]);
@@ -169,3 +173,47 @@ function transController($scope, $window, $document, $route, $location){
 
 
 app.controller('transpotationController', ["$scope", "$window", "$document", "$route", "$location", transController]);
+
+function startCtrl($scope, $window, $document, $route, $location){
+    $scope.giftList = [
+        {
+            label: "點心",
+            ischecked: false,
+            link:"img/snack.png"
+        },
+        {
+            label: "星巴克",
+            ischecked: false,
+            link:"img/coffee.png"
+        },
+        {
+            label: "電影票",
+            ischecked: false,
+            link:"img/movieTicket.png"
+        },
+        {
+            label: "幸運紅包",
+            ischecked: false,
+            link:"img/luckyPocket.png"
+        },
+        {
+            label: "商品卡",
+            ischecked: false,
+            link:"img/sevenElevenCard.png"
+        }
+    ];
+    $scope.firstSteps = true
+    $scope.toStep = function(step){
+        if(step == 'two'){
+            $scope.firstSteps = false
+            $scope.secSteps = true
+        }
+
+    }
+    $scope.checkItem = function(item){
+        item.ischecked = !item.ischecked
+    }
+    console.log('start family day')
+}
+
+app.controller('startFamilyDayController', ["$scope", "$window", "$document", "$route", "$location", startCtrl]);

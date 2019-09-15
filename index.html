@@ -67,6 +67,12 @@
                   </a>
               </li>
               <li>
+                <a class="menuItem optionItem" href="#!start" ng-click='$event.stopPropagation();closeMenu()'>
+                  <i class="fas fa-info-circle"></i>
+                  <span class="optionItem">開始家庭日</span>
+                </a>
+              </li>
+              <li>
                 <a class="menuItem optionItem" href="#!caution" ng-click='$event.stopPropagation();closeMenu()'>
                   <i class="fas fa-info-circle"></i>
                   <span class="optionItem">注意事項</span>
@@ -81,7 +87,7 @@
           <div class="Progressbar"><p></p></div>
         </div> -->
     </div>
-    <div ng-view ></div>
+    <div ng-view></div>
     <footer ng-include="'./footer.html'" id="footer">
     </footer>
   </div>
