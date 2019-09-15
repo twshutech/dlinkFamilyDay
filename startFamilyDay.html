@@ -4,16 +4,19 @@
             <img src="img/family.png" alt="startFamilyDay" class="imgClass">
         </span>
         <span>點擊下面按鈕來開始家庭日活動喔！</span>
-        <span class="fullScreenWidth btn" ng-click="toStep('two')">開始家庭日</span>
     </div>
     <div ng-if="secSteps">
         <div ng-repeat="gift in giftList" class="giftList" ng-click="checkItem(gift)">
-            <span ng-if="gift.ischecked">
-                <img src="img/checked.png" alt="" class="imgClass checkedClass">
+            <span ng-if="gift.ischecked" class="checkedClass">
+                <img src="img/checked.png" alt="" class="imgClass">
             </span>
             <span>
                 <img ng-src="{{gift.link}}" alt="" class="imgClass">
             </span>
+            <span>
+                {{gift.label}}
+            </span>
         </div>
     </div>
+    <span class="fullScreenWidth btn" ng-click="toStep('two')">{{btnLabel}}</span>
 </div>

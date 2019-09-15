@@ -202,11 +202,14 @@ function startCtrl($scope, $window, $document, $route, $location){
             link:"img/sevenElevenCard.png"
         }
     ];
+    $scope.btnLabels = ['開始家庭日', '我領完了!'];
+    $scope.btnLabel = $scope.btnLabels[0]
     $scope.firstSteps = true
     $scope.toStep = function(step){
         if(step == 'two'){
             $scope.firstSteps = false
             $scope.secSteps = true
+            $scope.btnLabel = $scope.btnLabels[1]
         }
 
     }
