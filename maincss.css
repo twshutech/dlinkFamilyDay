@@ -461,4 +461,10 @@ margin: auto;
     top: 35px;
     position: relative;
   }
+  .labelClass{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+  }
 }
