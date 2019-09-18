@@ -205,28 +205,34 @@ function startCtrl($scope, $window, $document, $route, $location){
     $scope.diys = [
         {
             label:'絹印環保袋',
-            checked:false
+            checked:false,
+            disabled:false
         },
         {
             label: '松果貓頭鷹',
-            checked:false
+            checked:false,
+            disabled:false
         },
         {
             label:'俏皮貓頭鷹像框',
-            checked:false
+            checked:false,
+            disabled:false
         },
         {
             label:'幸福苔玉球',
-            checked:false
+            checked:false,
+            disabled:false
         },
         {
             label:'貓頭鷹時鐘',
-            checked:false
+            checked:false,
+            disabled:false
         }
     ];
     $scope.btnLabels = ['開始家庭日', '我領完了!  開始闖關DIY'];
     $scope.btnLabel = $scope.btnLabels[0]
     $scope.firstSteps = true
+    $scope.maxDiy = false
     $scope.toStep = function(step){
         if(step == 'two'){
             $scope.firstSteps = false
@@ -247,21 +253,26 @@ function startCtrl($scope, $window, $document, $route, $location){
             else{
                 return
             }
+            if(n==2){
+                if(item.checked!=true){
+                    item.disabled = true
+                }
+            }
         });
         if(n>2){
             $scope.diys[index]['checked'] = false;
-            console.log(item);
         }
         if(n<3){
             if(n==2){
                 $scope.diys[index]['checked'] = false;
+                //document.getElementById('select_diy_label_'+index).classList.remove('checkedIcon');
             }
             else{
                 $scope.diys[index]['checked'] = !$scope.diys[index]['checked'];
+                //document.getElementById('select_diy_label_'+index).className('checkedIcon');
             }
-            console.log(item);
         }
-        //console.log(n);
+        console.log()
     }
 }
 

@@ -466,5 +466,17 @@ margin: auto;
     width: 100%;
     display: block;
     text-align: center;
-}
+  }
+  .hideItem{
+    display: none;
+  }
+  .diyItem{
+    width: 100%;
+    text-align: center;
+  }
+  .checkedIcon{
+    background: url(../img/checked.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
