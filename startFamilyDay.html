@@ -17,6 +17,12 @@
                 {{gift.label}}
             </span>
         </div>
+        <div>
+            <div ng-repeat='diy in diys'>
+                <input type="radio" id="selected_diy_{{$index}}" ng-checked="diy['checked']">
+                <label ng-click="checkDiy(diy,$index)">{{diy.label}}</label>
+            </div>
+        </div>
     </div>
     <span class="fullScreenWidth btn" ng-click="toStep('two')">{{btnLabel}}</span>
 </div>

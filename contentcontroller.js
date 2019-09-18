@@ -202,6 +202,28 @@ function startCtrl($scope, $window, $document, $route, $location){
             link:"img/sevenElevenCard.png"
         }
     ];
+    $scope.diys = [
+        {
+            label:'絹印環保袋',
+            checked:false
+        },
+        {
+            label: '松果貓頭鷹',
+            checked:false
+        },
+        {
+            label:'俏皮貓頭鷹像框',
+            checked:false
+        },
+        {
+            label:'幸福苔玉球',
+            checked:false
+        },
+        {
+            label:'貓頭鷹時鐘',
+            checked:false
+        }
+    ];
     $scope.btnLabels = ['開始家庭日', '我領完了!  開始闖關DIY'];
     $scope.btnLabel = $scope.btnLabels[0]
     $scope.firstSteps = true
@@ -216,7 +238,31 @@ function startCtrl($scope, $window, $document, $route, $location){
     $scope.checkItem = function(item){
         item.ischecked = !item.ischecked
     }
-    console.log('start family day')
+    $scope.checkDiy = function(item,index){
+        var n = 0;
+        angular.forEach($scope.diys,function(item){
+            if(item.checked == true){
+                n = n + 1;
+            }
+            else{
+                return
+            }
+        });
+        if(n>2){
+            $scope.diys[index]['checked'] = false;
+            console.log(item);
+        }
+        if(n<3){
+            if(n==2){
+                $scope.diys[index]['checked'] = false;
+            }
+            else{
+                $scope.diys[index]['checked'] = !$scope.diys[index]['checked'];
+            }
+            console.log(item);
+        }
+        //console.log(n);
+    }
 }
 
 app.controller('startFamilyDayController', ["$scope", "$window", "$document", "$route", "$location", startCtrl]);
