@@ -202,43 +202,74 @@ function startCtrl($scope, $window, $document, $route, $location){
             link:"img/sevenElevenCard.png"
         }
     ];
-    $scope.diys = [
+    $scope.giftList = [
         {
-            label:'絹印環保袋',
-            checked:false,
-            disabled:false
+            label: "點心",
+            ischecked: false,
+            link:"img/snack.png"
         },
         {
-            label: '松果貓頭鷹',
-            checked:false,
-            disabled:false
+            label: "星巴克",
+            ischecked: false,
+            link:"img/coffee.png"
         },
         {
-            label:'俏皮貓頭鷹像框',
-            checked:false,
-            disabled:false
+            label: "電影票",
+            ischecked: false,
+            link:"img/movieTicket.png"
         },
         {
-            label:'幸福苔玉球',
-            checked:false,
-            disabled:false
+            label: "幸運紅包",
+            ischecked: false,
+            link:"img/luckyPocket.png"
         },
         {
-            label:'貓頭鷹時鐘',
-            checked:false,
-            disabled:false
+            label: "商品卡",
+            ischecked: false,
+            link:"img/sevenElevenCard.png"
+        }
+    ];
+    $scope.levels = [
+        {
+            label:'第一關-生存大冒險',
+            checked:false
+        },
+        {
+            label: '第二關-生態尋寶趣',
+            checked:false
+        },
+        {
+            label: '第三關-小鳥猜猜猜',
+            checked:false
+        },
+        {
+            label: '第四關-塑膠大作戰',
+            checked:false
+        },
+        {
+            label: '第五關-考古拼拼樂',
+            checked:false
         }
     ];
     $scope.btnLabels = ['開始家庭日', '我領完了!  開始闖關DIY'];
     $scope.btnLabel = $scope.btnLabels[0]
     $scope.firstSteps = true
+    $scope.secSteps = false
+    $scope.thirdSteps = false
     $scope.maxDiy = false
-    $scope.toStep = function(step){
-        if(step == 'two'){
+    $scope.toStep = function(){
+        if($scope.btnLabel == $scope.btnLabels[0]){
             $scope.firstSteps = false
             $scope.secSteps = true
+            $scope.thirdSteps = false
             $scope.btnLabel = $scope.btnLabels[1]
         }
+        else if($scope.btnLabel == $scope.btnLabels[1]){
+            $scope.firstSteps = false
+            $scope.secSteps = false
+            $scope.thirdSteps = true
+        }
+        console.log($scope.btnLabel)
 
     }
     $scope.checkItem = function(item){
@@ -273,6 +304,9 @@ function startCtrl($scope, $window, $document, $route, $location){
             }
         }
         console.log()
+    }
+    $scope.checkLevel = function(item, index){
+        $scope.levels[index]['checked'] = !$scope.levels[index]['checked'];
     }
 }
 

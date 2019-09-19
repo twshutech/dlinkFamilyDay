@@ -24,5 +24,11 @@
             </div>
         </div>
     </div>
-    <span class="fullScreenWidth btn" ng-click="toStep('two')">{{btnLabel}}</span>
+    <div ng-if="thirdSteps">
+        <div ng-repeat="level in levels">
+            <input type="radio" id="selected_level_{{$index}}" ng-checked="level['checked']" class="hideItem">
+            <label ng-click="checkLevel(level,$index)" ng-class="level['checked'] ? 'checkedIcon':''" class="diyItem" id='select_level_label_{{$index}}'>{{level.label}}</label>
+        </div>
+    </div>
+    <span class="fullScreenWidth btn" ng-click="toStep()">{{btnLabel}}</span>
 </div>
