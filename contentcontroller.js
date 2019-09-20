@@ -302,7 +302,9 @@ function startCtrl($scope, $window, $document, $route, $location){
                 //document.getElementById('select_diy_label_'+index).className('checkedIcon');
             }
         }
-        console.log()
+    }
+    $scope.checkLevel = function(item,index){
+        $scope.levels[index]['checked'] = !$scope.levels[index]['checked'];
     }
 }
 
