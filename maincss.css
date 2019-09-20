@@ -195,12 +195,6 @@ margin: auto;
   line-height: 50px;
   height: 100%; 
 }
-.option{
-  height: 100%;
-  position: relative;
-  width: 100%;
-  z-index: 100;
-}
 .hideItem{
   display: none;
 }
@@ -235,7 +229,7 @@ margin: auto;
  
   font-size:15px;
 }
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 900px) {
   
   #frontpage a{
     width: 80%;

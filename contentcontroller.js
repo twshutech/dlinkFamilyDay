@@ -202,31 +202,31 @@ function startCtrl($scope, $window, $document, $route, $location){
             link:"img/sevenElevenCard.png"
         }
     ];
-    $scope.giftList = [
+    $scope.diys = [
         {
-            label: "點心",
-            ischecked: false,
-            link:"img/snack.png"
+            label:'絹印環保袋',
+            checked:false,
+            disabled:false
         },
         {
-            label: "星巴克",
-            ischecked: false,
-            link:"img/coffee.png"
+            label: '松果貓頭鷹',
+            checked:false,
+            disabled:false
         },
         {
-            label: "電影票",
-            ischecked: false,
-            link:"img/movieTicket.png"
+            label:'俏皮貓頭鷹像框',
+            checked:false,
+            disabled:false
         },
         {
-            label: "幸運紅包",
-            ischecked: false,
-            link:"img/luckyPocket.png"
+            label:'幸福苔玉球',
+            checked:false,
+            disabled:false
         },
         {
-            label: "商品卡",
-            ischecked: false,
-            link:"img/sevenElevenCard.png"
+            label:'貓頭鷹時鐘',
+            checked:false,
+            disabled:false
         }
     ];
     $scope.levels = [
@@ -269,7 +269,6 @@ function startCtrl($scope, $window, $document, $route, $location){
             $scope.secSteps = false
             $scope.thirdSteps = true
         }
-        console.log($scope.btnLabel)
 
     }
     $scope.checkItem = function(item){
@@ -304,9 +303,6 @@ function startCtrl($scope, $window, $document, $route, $location){
             }
         }
         console.log()
-    }
-    $scope.checkLevel = function(item, index){
-        $scope.levels[index]['checked'] = !$scope.levels[index]['checked'];
     }
 }
 
