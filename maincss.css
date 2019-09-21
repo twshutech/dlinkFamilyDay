@@ -368,7 +368,8 @@ margin: auto;
     background-color: #278da2;
     border: 1px solid #278da2;
     border-radius: 5px;
-    color:#fff
+    color:#fff;
+    margin-top: 5%;
   }
   a.btn:active{
     color: #fff;
@@ -448,9 +449,9 @@ margin: auto;
     width: 100%;
   }
   .giftList{
-    width: 45%;
+    width: 50%;
     display: inline-block;
-    padding: 10px;
+    padding: 30px;
   }
   .checkedClass{
     width: 24px;
@@ -472,7 +473,17 @@ margin: auto;
     text-align: center;
   }
   .checkedIcon{
-    background: url(../dlinkFamilyDay/img/checked.png);
+    background: url(../img/checked.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .unchecked{
+    background: url(../img/check-box-empty.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .checked{
+    background: url(../img/check-box.png);
     background-size: contain;
     background-repeat: no-repeat;
   }

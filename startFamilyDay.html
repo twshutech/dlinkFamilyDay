@@ -20,7 +20,7 @@
         <div>
             <div ng-repeat='diy in diys'>
                 <input type="radio" id="selected_diy_{{$index}}" ng-checked="diy['checked']" class="hideItem">
-                <label ng-click="checkDiy(diy,$index)" ng-class="diy['checked'] ? 'checkedIcon':''" class="diyItem" id='select_diy_label_{{$index}}'>{{diy.label}}</label>
+                <label ng-click="checkDiy(diy,$index)" ng-class="diy['checked'] ? 'checked':'unchecked'" class="diyItem" id='select_diy_label_{{$index}}'>{{diy.label}}</label>
             </div>
         </div>
     </div>
