@@ -18,6 +18,7 @@
             </span>
         </div>
         <div>
+            <span class="title">🤔我要參加的DIY是：</span>
             <div ng-repeat='diy in diys'>
                 <input type="radio" id="selected_diy_{{$index}}" ng-checked="diy['checked']" class="hideItem">
                 <label ng-click="checkDiy(diy,$index)" ng-class="diy['checked'] ? 'checked':'unchecked'" class="diyItem" id='select_diy_label_{{$index}}'>{{diy.label}}</label>
@@ -25,10 +26,14 @@
         </div>
     </div>
     <div ng-if="thirdSteps">
+        <span class="title">🎠闖五關斬六將</span>
         <div ng-repeat="level in levels">
             <input type="radio" id="selected_level_{{$index}}" ng-checked="level['checked']" class="hideItem">
             <label ng-click="checkLevel(level,$index)" ng-class="level['checked'] ? 'checked':'unchecked'" class="diyItem" id='select_level_label_{{$index}}'>{{level.label}}</label>
         </div>
+    </div>
+    <div ng-if="forthSteps">
+            <img src="../img/celebration.gif" alt="">
     </div>
     <span class="fullScreenWidth btn" ng-click="toStep()">{{btnLabel}}</span>
 </div>

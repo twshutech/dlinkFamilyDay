@@ -251,25 +251,52 @@ function startCtrl($scope, $window, $document, $route, $location){
             checked:false
         }
     ];
-    $scope.btnLabels = ['開始家庭日', '我領完了!  開始闖關DIY'];
+    $scope.btnLabels = ['開始家庭日', '我領完了!  開始闖關DIY','我做完DIY,也闖完關了！','回家']
     $scope.btnLabel = $scope.btnLabels[0]
     $scope.firstSteps = true
     $scope.secSteps = false
     $scope.thirdSteps = false
+    $scope.forthSteps = false
     $scope.maxDiy = false
+    $scope.initSteps = function(){
+        $scope.firstSteps = false
+        $scope.secSteps = false
+        $scope.thirdSteps = false
+        $scope.forthSteps = false
+    }
     $scope.toStep = function(){
         if($scope.btnLabel == $scope.btnLabels[0]){
-            $scope.firstSteps = false
+            $scope.initSteps();
             $scope.secSteps = true
-            $scope.thirdSteps = false
             $scope.btnLabel = $scope.btnLabels[1]
         }
         else if($scope.btnLabel == $scope.btnLabels[1]){
-            $scope.firstSteps = false
-            $scope.secSteps = false
+            $scope.initSteps();
             $scope.thirdSteps = true
+            $scope.btnLabel = $scope.btnLabels[2]
+            angular.forEach($scope.diys, function(diy){
+                if(diy.checked == true){
+                    diy['checked'] = false
+                    $scope.levels.push(diy)
+                }
+            });
         }
-
+        else if($scope.btnLabel == $scope.btnLabels[2]){
+            var n = 0
+            angular.forEach($scope.levels, function(level, index){
+                if(level.checked == true){
+                    n = n + 1
+                    if(n == $scope.levels.length){
+                        $scope.initSteps();
+                        $scope.forthSteps = true
+                        $scope.btnLabel = $scope.btnLabels[3]
+                    }
+                }
+            });
+        }
+        else if($scope.btnLabel == $scope.btnLabels[3]){
+            $window.location.href = '#!map'
+        }
     }
     $scope.checkItem = function(item){
         item.ischecked = !item.ischecked
