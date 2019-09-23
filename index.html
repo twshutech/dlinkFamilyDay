@@ -29,6 +29,8 @@
      <title>D-Link Family day</title>
 </head>
 <body ng-app="myApp"ng-controller="familydayController">
+  <span style="width: 100%;display: block;position: absolute;z-index: 101; font-size: 25px" ng-if="deviceView">請使用行動裝置進入此頁面</span>
+  <img src="img/mobileOnly.png" alt="mobile_only" style="width: 100%;display: block;position: absolute;z-index: 100;" ng-if="deviceView">
   <div class="main_content" id="home">
     <div class="header" id="menu">
         <div  class="logo">
@@ -81,7 +83,7 @@
           <div class="Progressbar"><p></p></div>
         </div> -->
     </div>
-    <div ng-view></div>
+    <div ng-view ng-if="!deviceView"></div>
     <!--<footer ng-include="'./footer.html'" id="footer">
     </footer> -->
   </div>

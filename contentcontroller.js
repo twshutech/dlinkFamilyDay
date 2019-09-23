@@ -29,8 +29,9 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 }]);
 
 function Ctrl($scope, $window, $document, $route, $location){
-
+    $scope.deviceView = true;
     if($window.innerWidth < 1000){
+        $scope.deviceView = false
         $scope.mobilemenu = function(e){
             $scope.desktopView = !$scope.desktopView;
             $('.option').removeClass('hideItem');
