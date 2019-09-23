@@ -367,7 +367,12 @@ function luckyDrawCtrl($scope, $window, $document, $route, $location){
             $scope.luckyPocket[$scope.number].number = $scope.luckyPocket[$scope.number].number - 1
             $scope.youWon = $scope.luckyPocket[$scope.number].label
             if($scope.luckyPocket[$scope.number].number == 0){
-                max = 2
+                if(max == 3){
+                    max = 2
+                }
+                else if(max == 2){
+                    max = 1
+                }
                 $scope.nothingLeft.push($scope.luckyPocket[$scope.number])
                 _.pull($scope.luckyPocket, $scope.luckyPocket[$scope.number])
             }
@@ -375,6 +380,23 @@ function luckyDrawCtrl($scope, $window, $document, $route, $location){
         }
         else{
             $scope.drawBtn = $scope.whosTurn[0]
+        }
+    }
+    $scope.add = function(item){
+        if(item.label == 'starbucks'){
+            if(item.number < 20){
+                item.number = item.number + 1
+            }
+        }
+        else if(item.label == '商品卡'){
+            if(item.number < 140){
+                item.number = item.number + 1
+            }
+        }
+        else if(item.label == '威秀電影票'){
+            if(item.number < 110){
+                item.number = item.number + 1
+            }
         }
     }
 }

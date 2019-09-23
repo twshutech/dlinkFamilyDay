@@ -2,6 +2,7 @@
     <div ng-repeat='pocket in luckyPocket'>
         <span class="title">{{pocket.label}}</span>
         <span class="title drawItem">{{pocket.number}}</span>
+        <span ng-click="add(pocket)">➕</span>
     </div>
     <div ng-repeat='pocket in nothingLeft'>
         <span class="title">{{pocket.label}}</span>
