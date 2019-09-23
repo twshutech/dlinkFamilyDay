@@ -7,6 +7,9 @@
         <span class="title">{{pocket.label}}</span>
         <span class="title drawItem">{{pocket.number}}</span>
     </div>
+    <span ng-if="drawBtn == '下一位'"  class="title">你抽到：</span>
+    <span ng-if="drawBtn == '下一位'" class="title drawItem">{{youWon}}</span>
     <span ng-click="draw()" class="btn">{{drawBtn}}</span>
-    <img src="../dlinkFamilyDay/img/yugioh.gif" alt="" style="width:100%;margin-top:10px">
+    <img src="../dlinkFamilyDay/img/celebration.gif" alt="" style="width:100%;margin-top:10px" ng-if="drawBtn == '下一位'">
+    <img src="../dlinkFamilyDay/img/yugioh.gif" alt="" style="width:100%;margin-top:10px" ng-if="drawBtn == '輪到我的回合了，我抽'">
 </div>

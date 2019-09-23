@@ -355,6 +355,7 @@ function luckyDrawCtrl($scope, $window, $document, $route, $location){
             
         }
     ]
+    $scope.youWon = null
     $scope.whosTurn = ['輪到我的回合了，我抽','下一位']
     $scope.drawBtn = $scope.whosTurn[0]
     var max = 3
@@ -364,6 +365,7 @@ function luckyDrawCtrl($scope, $window, $document, $route, $location){
             $scope.number = Math.floor(Math.random() * Math.floor(max))
             console.log($scope.luckyPocket[$scope.number]) 
             $scope.luckyPocket[$scope.number].number = $scope.luckyPocket[$scope.number].number - 1
+            $scope.youWon = $scope.luckyPocket[$scope.number].label
             if($scope.luckyPocket[$scope.number].number == 0){
                 max = 2
                 $scope.nothingLeft.push($scope.luckyPocket[$scope.number])
