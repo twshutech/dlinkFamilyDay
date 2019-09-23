@@ -48,8 +48,11 @@ table{width: 100%;}
   position: absolute;
   bottom: -125px;
 }
-span.visited, span.active{
+span:visited, span:active{
   color: #fff;
+}
+.btn.focus, .btn:focus, .btn:hover{
+  color:#fff
 }
 .header{
   z-index: 50;
