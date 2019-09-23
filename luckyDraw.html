@@ -1,0 +1,12 @@
+<div id="frontpage">
+    <div ng-repeat='pocket in luckyPocket'>
+        <span class="title">{{pocket.label}}</span>
+        <span class="title drawItem">{{pocket.number}}</span>
+    </div>
+    <div ng-repeat='pocket in nothingLeft'>
+        <span class="title">{{pocket.label}}</span>
+        <span class="title drawItem">{{pocket.number}}</span>
+    </div>
+    <span ng-click="draw()" class="btn">{{drawBtn}}</span>
+    <img src="../img/yugioh.gif" alt="" style="width:100%;margin-top:10px">
+</div>

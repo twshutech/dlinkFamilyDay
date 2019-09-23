@@ -24,6 +24,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     .when("/start", {
         templateUrl : "./startFamilyDay.html",
         controller: 'startFamilyDayController'
+    })
+    .when("/draw", {
+        templateUrl : "./luckyDraw.html",
+        controller: 'luckyDrawController'
     });
     //$locationProvider.html5Mode(true);
 }]);
@@ -337,3 +341,40 @@ function startCtrl($scope, $window, $document, $route, $location){
 }
 
 app.controller('startFamilyDayController', ["$scope", "$window", "$document", "$route", "$location", startCtrl]);
+
+function luckyDrawCtrl($scope, $window, $document, $route, $location){
+    $scope.luckyPocket = [{
+            number: 110,
+            label:'威秀電影票'
+        },{
+            number: 140,
+            label:'商品卡'
+        },{
+            number: 20,
+            label:'starbucks'
+            
+        }
+    ]
+    $scope.whosTurn = ['輪到我的回合了，我抽','下一位']
+    $scope.drawBtn = $scope.whosTurn[0]
+    var max = 3
+    $scope.nothingLeft = []
+    $scope.draw = function(){
+        if($scope.drawBtn == $scope.whosTurn[0]){
+            $scope.number = Math.floor(Math.random() * Math.floor(max))
+            console.log($scope.luckyPocket[$scope.number]) 
+            $scope.luckyPocket[$scope.number].number = $scope.luckyPocket[$scope.number].number - 1
+            if($scope.luckyPocket[$scope.number].number == 0){
+                max = 2
+                $scope.nothingLeft.push($scope.luckyPocket[$scope.number])
+                _.pull($scope.luckyPocket, $scope.luckyPocket[$scope.number])
+            }
+            $scope.drawBtn = $scope.whosTurn[1]
+        }
+        else{
+            $scope.drawBtn = $scope.whosTurn[0]
+        }
+    }
+}
+
+app.controller('luckyDrawController', ["$scope", "$window", "$document", "$route", "$location", luckyDrawCtrl]);

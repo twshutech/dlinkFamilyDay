@@ -8,6 +8,9 @@ a,a:hover,a:active{
   text-decoration: none;
   color:#fff;
 }
+.btn span{
+  color: #fff
+}
 table{width: 100%;}
 .tg  {border-collapse:collapse;border-spacing:0;border-width:1px;border-style:solid;border-color:#bbb;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#ade1eb;}
@@ -489,5 +492,8 @@ margin: auto;
   }
   .title{
     font-size: 20px;
+  }
+  .drawItem{
+    color:red
   }
 }
