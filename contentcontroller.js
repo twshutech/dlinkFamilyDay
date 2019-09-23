@@ -350,7 +350,7 @@ function luckyDrawCtrl($scope, $window, $document, $route, $location){
             number: 140,
             label:'商品卡'
         },{
-            number: 20,
+            number: 19,
             label:'starbucks'
             
         }
@@ -384,7 +384,7 @@ function luckyDrawCtrl($scope, $window, $document, $route, $location){
     }
     $scope.add = function(item){
         if(item.label == 'starbucks'){
-            if(item.number < 20){
+            if(item.number < 19){
                 item.number = item.number + 1
             }
         }
