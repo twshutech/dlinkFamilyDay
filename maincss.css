@@ -499,4 +499,7 @@ margin: auto;
   .drawItem{
     color:red
   }
+  .mr_top{
+    margin-top: 5%
+  }
 }

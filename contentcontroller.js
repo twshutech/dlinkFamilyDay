@@ -97,7 +97,7 @@ function transController($scope, $window, $document, $route, $location){
     $scope.showSelection = false
     $scope.showBusPath = false;
     $scope.diySelection = '你要怎麼去'
-    $scope.currentLocation = { lat: 25.0999136, lng: 121.5222447}
+    $scope.currentLocation = { lat: 25.101992, lng: 121.5221328}
     $scope.selectedTravelMode = $scope.travelMode[0]
     $scope.selectDIY = function(index){
         console.log(index);
@@ -147,11 +147,10 @@ function transController($scope, $window, $document, $route, $location){
     $window.initMap = function initMap() {
         var directionsService = new google.maps.DirectionsService();
         var directionsDisplay = new google.maps.DirectionsRenderer();
-        var familyDay = {lat: 25.100093, lng: 121.530059};
-        // The map, centered at Uluru
+        var familyDay = {lat: 25.1052319, lng: 121.5297909};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 16,
-            center: { lat: 25.034010, lng: 121.562428 }
+            center: {lat: 25.1048016, lng: 121.5298468}
         });
     
         directionsDisplay.setMap(map);
@@ -159,7 +158,8 @@ function transController($scope, $window, $document, $route, $location){
         var request = {
             origin: $scope.currentLocation,
             destination: familyDay,
-            travelMode: $scope.selectedTravelMode
+            travelMode: $scope.selectedTravelMode,
+            waypoints: [{location: "4G3G+C8 Taipei",stopover:false}]
         };
         directionsService.route(request, function (result, status) {
             if (status == 'OK') {
