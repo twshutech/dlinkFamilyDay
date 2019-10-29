@@ -4,7 +4,7 @@ body,html{
 ul{
   list-style-type: none;
 }
-a,a:hover,a:active{
+a{
   text-decoration: none;
   color:#fff;
 }
@@ -48,7 +48,7 @@ table{width: 100%;}
   position: absolute;
   bottom: -125px;
 }
-span:visited, span:active{
+span:visited{
   color: #fff;
 }
 .btn.focus, .btn:focus, .btn:hover{
