@@ -347,18 +347,14 @@ function luckyDrawCtrl($scope, $window, $document, $route, $location){
             number: 110,
             label:'威秀電影票'
         },{
-            number: 140,
+            number: 129,
             label:'商品卡'
-        },{
-            number: 19,
-            label:'starbucks'
-            
         }
     ]
     $scope.youWon = null
     $scope.whosTurn = ['輪到我的回合了，我抽','下一位']
     $scope.drawBtn = $scope.whosTurn[0]
-    var max = 3
+    var max = 2
     $scope.nothingLeft = []
     $scope.draw = function(){
         if($scope.drawBtn == $scope.whosTurn[0]){
@@ -367,11 +363,11 @@ function luckyDrawCtrl($scope, $window, $document, $route, $location){
             $scope.luckyPocket[$scope.number].number = $scope.luckyPocket[$scope.number].number - 1
             $scope.youWon = $scope.luckyPocket[$scope.number].label
             if($scope.luckyPocket[$scope.number].number == 0){
-                if(max == 3){
-                    max = 2
-                }
-                else if(max == 2){
+                if(max == 2){
                     max = 1
+                }
+                else if(max == 1){
+                    max = 0
                 }
                 $scope.nothingLeft.push($scope.luckyPocket[$scope.number])
                 _.pull($scope.luckyPocket, $scope.luckyPocket[$scope.number])
@@ -383,13 +379,8 @@ function luckyDrawCtrl($scope, $window, $document, $route, $location){
         }
     }
     $scope.add = function(item){
-        if(item.label == 'starbucks'){
-            if(item.number < 19){
-                item.number = item.number + 1
-            }
-        }
-        else if(item.label == '商品卡'){
-            if(item.number < 140){
+        if(item.label == '商品卡'){
+            if(item.number < 129){
                 item.number = item.number + 1
             }
         }
