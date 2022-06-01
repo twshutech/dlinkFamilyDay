@@ -1,164 +1,44 @@
+---
+feature_name: Video / Media Session
+chrome_version: 57
+feature_id: 5639924124483584
+check_min_version: true
+index: index.html
+---
 
-<!doctype html>
-<html lang="en">
-<head>
+<h3>Background</h3>
+<p>The <a href="https://developers.google.com/web/updates/2017/02/media-session">Media Session API</a> 
+lets you customize media notifications by providing metadata information for
+the media your web app is playing. It also allows you to handle media related
+events such as seeking or track changing which may come from notifications or
+media keys.</p>
 
+<p>Credits: Media files are © copyright Blender Foundation | <a href="http://www.blender.org">www.blender.org </a>.</p>
 
-<meta charset="utf-8">
-  <meta name="google-site-verification" content="pDql8gIMo3hLFknKStM-73zuZmVdS_86nT8IOtKd8pc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="google-site-verification" content="tALAq3_wj8X2QGSaaBj0lZdZIzEVOahqUFVh8AasSf0" />
-  <meta name="Description" content="Dlink family day 2019">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="view-source:https://janlosert.com/assets/styles/css/main.css?11"> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-  <script src="https://kit.fontawesome.com/64f843e81f.js"></script>
-  <script src="lodash.js"></script>
-  <script src="contentcontroller.js"></script>
-  <link rel="icon" sizes="192x192" href="img/logo_dlink.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/logo_dlink.png">
-  <link rel="manifest" src="manifest.webmanifest">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-  <link rel="stylesheet" href="maincss.css">
+<style>
+  video { background: #1e2327; border-radius: 4px; width: 100%; } 
+</style>
 
-     <title>D-Link Family day</title>
-</head>
-<body ng-app="myApp"ng-controller="familydayController">
-  <span style="width: 100%;display: block;position: absolute;z-index: 101; font-size: 25px" ng-if="deviceView">請使用行動裝置進入此頁面</span>
-  <img src="img/mobileOnly.png" alt="mobile_only" style="width: 100%;display: block;position: absolute;z-index: 100;" ng-if="deviceView">
-  <div class="main_content" id="home">
-    <div class="header" id="menu">
-        <div  class="logo">
-          <span class="wrap_logo">
-            <img src="img/dlink.png" alt="dlink" class="img_logo">
-          </span>
-        </div>
-        <div class="menuWrap">
-          <a id="icon_Menu" ng-click="mobilemenu($event)">
-              <i class="fa fa-align-justify" style="font-size:40px;color:#278da2; vertical-align: middle"></i>
-          </a>
-          <div class="option hideItem optionItem">
-            <ul class="menuList">
-              <li class="menuItem optionItem">
-                  <a href="./" ng-click='$event.stopPropagation();closeMenu()'>
-                    <span class="optionItem">🗒活動摘要</span>
-                  </a>
-              </li>
-              <li>
-                <a class="menuItem optionItem" href="#!bonus" ng-click='$event.stopPropagation();closeMenu()'>
-                  <span class="optionItem">🍭活動補助</span>
-                </a>
-              </li>
-              <li>
-                <a class="menuItem optionItem" href="#!map" ng-click='$event.stopPropagation();closeMenu()'>
-                  <span class="optionItem">🗺地圖</span>
-                </a>
-              </li>
-              <li>
-                  <a class="menuItem optionItem" href="#!transpotation" ng-click='$event.stopPropagation();closeMenu()'>
-                    <span class="optionItem">🚊交通方式</span>
-                  </a>
-              </li>
-              <li>
-                <a class="menuItem optionItem" href="#!start" ng-click='$event.stopPropagation();closeMenu()'>
-                  <span class="optionItem"> 👨‍👩‍👦‍👦開始家庭日</span>
-                </a>
-              </li>
-              <li>
-                <a class="menuItem optionItem" href="#!caution" ng-click='$event.stopPropagation();closeMenu()'>
-                  <span class="optionItem">❗️注意事項</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </div>
-    <div class="menu">
-      <!-- <div class="barholder">
-          <div class="Progressbar"><p></p></div>
-        </div> -->
-    </div>
-    <div ng-view ng-if="!deviceView"></div>
-    <!--<footer ng-include="'./footer.html'" id="footer">
-    </footer> -->
-  </div>
-</body>
-<script>  
-$(document).ready(function(){
-var currentUrl = window.location.href;
-    var currentPath = currentUrl.substr(currentUrl.lastIndexOf('/') + 1);
-    if(currentPath=="skills"){
-      $('#footer').css('position','relative');
-    }
-})
-</script>
+<video preload="none" controls></video>
+
+{% include output_helper.html %}
+
 <script>
-  $(document).ready(function(){
-  
-    $('#gohire').click(function(){
-   $.ajax({
-     type:'post',
-     url:"https://twshutech.github.io/dlinkFamilyDay/client.php",
-     success:function(data){
-       console.log('it went well'+data);
-     },error:function(data){
-       console.log(data);
-     }
-   });
-   })
-    // $('html').load('https://twshutech.github.io/demo.github.io/client.php');
+  if (!('mediaSession' in navigator)) {
+    ChromeSamples.setStatus('The Media Session API is not yet available. Try Chrome for Android.');
+  }
 
-    
-    $('#skillbtn').click(function(){
-      var body = document.body;
-      $('.Progressbar').css('width','70%');
-     $('#skillnew').hide();
-     $('#portfolionew').show();
-     $('#skillbtn').css('display','none');
-     $('#contactpage').css('display','block');
-     body.scrollTop = 10;
-    });
-    $('#portbtn').click(function(){
-    //  $('#skillnew').show();
-    //  $('#portfolionew').hide();
-    //  $('#portbtn').css('display','none');
-    //  $('#skillbtn').css('display','block');
-      location.reload()
-    });
-    $('#contactpage').click(function(){
-      var body = document.body;
-      $('#contactpage').hide();
-      $('.Progressbar').css('width','100%');
-      $('#portfolionew').hide();
-      $('#portbtn').css('display','block');
-      $('#hire').show();
-      $('#footer').css('position','fixed');
-      body.scrollTop = 0;
-    });
-    $('.shutech').click(function(){
-      $('.Progressbar').css('width','50%');
+  // This prevents unnecessary errors when Media Session API is not available.
+  navigator.mediaSession = navigator.mediaSession || {};
+  navigator.mediaSession.setActionHandler = navigator.mediaSession.setActionHandler || function() {};
+  window.MediaMetadata = window.MediaMetadata || function() {};
 
-      $(this).remove();
-      $('.Progressbar p').innerHTML=$('.Progressbar').width();
-      $('#frontpage').remove();
-      $('#skillnew,#skillbtn').css('display','block');
-      if($(window).width()<=700){
-        $('#footer').css('position','relative');
-      }
-      // $('#skillbtn').css('display','block');
-    });
-  var getwidth = $('.Progressbar').width();
-  var getparentwidth= $('.barholder').width();
-  var getpersentage = (getwidth/getparentwidth)*100;
-    
-  });
+  log = ChromeSamples.log;
+</script>
 
-  </script>
-</html>
+{% include js_snippet.html filename='video.js' %}
+
+<script>
+  document.querySelector('video').addEventListener('play', onPlayButtonClick, { once: true });
+  document.querySelector('video').src = playlist[0].src;
+</script>
